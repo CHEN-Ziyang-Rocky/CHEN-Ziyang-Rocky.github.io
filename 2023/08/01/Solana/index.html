@@ -1,0 +1,799 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://raw.githubusercontent.com/CHEN-Ziyang-Rocky/Image/main/IMG_4487.jpg">
+  <link rel="icon" href="https://raw.githubusercontent.com/CHEN-Ziyang-Rocky/Image/main/IMG_4487.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Rocky CHEN">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Made by Ziyang CHEN, Rocky, 陈子阳  [TOC] 01. Solana 基础知识Solana是一个快速、可扩展且具有环保特性的区块链网络，在生态发展、开发情况、环保特性和安全性等方面取得了显著的进展。它的生态系统不断扩大，吸引了越来越多的开发者和项目加入，并提供丰富的开发工具和文档支持。Solana的POS和POH共识机制使其在环保方面具有优势，而S7协议保证了链的安全">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Solana 开发者培训营">
+<meta property="og:url" content="http://example.com/2023/08/01/Solana/index.html">
+<meta property="og:site_name" content="Rocky Web">
+<meta property="og:description" content="Made by Ziyang CHEN, Rocky, 陈子阳  [TOC] 01. Solana 基础知识Solana是一个快速、可扩展且具有环保特性的区块链网络，在生态发展、开发情况、环保特性和安全性等方面取得了显著的进展。它的生态系统不断扩大，吸引了越来越多的开发者和项目加入，并提供丰富的开发工具和文档支持。Solana的POS和POH共识机制使其在环保方面具有优势，而S7协议保证了链的安全">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/CHEN-Ziyang-Rocky/Image/main/a_program.png">
+<meta property="article:published_time" content="2023-08-01T08:02:00.000Z">
+<meta property="article:modified_time" content="2023-08-01T10:08:27.934Z">
+<meta property="article:author" content="Rocky CHEN">
+<meta property="article:tag" content="Web3.0">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/CHEN-Ziyang-Rocky/Image/main/a_program.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>Solana 开发者培训营 - Rocky Web</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Rocky Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>主页 | Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>档案 | Archive</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类 | Category</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签 | Tag</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于 | About</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-friends"></i>
+                <span>伙伴 | Friends</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://raw.githubusercontent.com/CHEN-Ziyang-Rocky/Image/main/a_program.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Solana 开发者培训营"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-08-01 16:02" pubdate>
+          Tuesday, August 1st 2023, 4:02 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          5.1k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          43 mins
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> times
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Solana 开发者培训营</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><em><strong>Made by Ziyang CHEN, Rocky, 陈子阳</strong></em></p>
+<hr>
+<p>[TOC]</p>
+<h1 id="01-Solana-基础知识"><a href="#01-Solana-基础知识" class="headerlink" title="01. Solana 基础知识"></a><u>01. Solana 基础知识</u></h1><p>Solana是一个快速、可扩展且具有环保特性的区块链网络，在生态发展、开发情况、环保特性和安全性等方面取得了显著的进展。它的生态系统不断扩大，吸引了越来越多的开发者和项目加入，并提供丰富的开发工具和文档支持。Solana的POS和POH共识机制使其在环保方面具有优势，而S7协议保证了链的安全性。</p>
+<p>本课程内容主要介绍了 Solana 区块链的基础知识、Rust合约开发、RPC功能和NFT解决方案等相关内容。课程从基础入手，逐步讲解，包括与索拉纳交互、RPC提供的功能和如何构建应用等方面。同时，还介绍了如何在前端与 Solana 合约进行交互，以便更好地使用其生态系统中的资源。最后，通过实际案例展示了如何使用这些知识点解决实际问题。</p>
+<h2 id="1-1-Solana开发流程"><a href="#1-1-Solana开发流程" class="headerlink" title="1.1 Solana开发流程"></a>1.1 Solana开发流程</h2><p>任何人都可以通过 Solana 支付费用来存储和执行代码。部署的代码被称为程序 &#x3D; 智能合约。要与程序交互，您需要从客户端在区块链上发送一笔交易。</p>
+<p>Solana开发者工作流程是程序-客户 (program-client) 模型。这个模型由两个主要的工作流程组成：程序开发和客户端开发。</p>
+<ol>
+<li>程序开发工作流程 (后端)：<ul>
+<li>在程序开发工作流程中，您可以使用 Rust、C 或 C++ 等编程语言来创建自定义的程序。</li>
+<li>这些程序可以包含智能合约、验证器或其他自定义功能。</li>
+<li>一旦您完成了程序的开发，可以将其部署到 Solana 区块链上。</li>
+<li>部署完成后，任何了解如何与这些程序进行通信的人都可以使用它们。</li>
+</ul>
+</li>
+<li>客户端开发工作流程 (前端)：<ul>
+<li>在客户端开发工作流程中，您可以编写与已部署程序进行交互的去中心化应用程序（dApp）。</li>
+<li>您可以使用客户端 SDK 或命令行界面（CLI）来编写与部署的程序进行通信的 dApp。</li>
+<li>这些客户端 SDK 在底层使用 JSON RPC API 来与程序进行通信。</li>
+<li>您可以创建各种应用程序，如钱包、交易所等，通过客户端 SDK 向已部署的程序提交交易指令。</li>
+<li>常见的应用程序类型包括浏览器扩展钱包和 Web 应用程序，但您也可以构建移动应用程序、桌面应用程序或任何能够与 JSON RPC API 进行通信的应用程序。</li>
+</ul>
+</li>
+</ol>
+<p>这两个工作流程共同创建了一个由 dApp 和程序组成的网络。它们可以相互通信以更新状态和查询区块链。这种模型涵盖了前端开发和合约开发两个方向。</p>
+<p><img src="/../../../Desktop/Typora_Picture/Screenshot%202023-08-01%20at%2017.28.25-20230801174709196.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="Account"><a href="#Account" class="headerlink" title="Account"></a>Account</h3><p>在Solana中，”Everythin is an Account” 类似Linux世界里面把所有的资源都抽象成 <strong>“文件”</strong> 一样。</p>
+<p>Solana作为一个分布式区块链系统，所有的信息都存储在Account对象中，如合约（Solana叫Onchain Program）, 账号信息，合约中存储的内容等都是存储在一个个Account对象中。</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-keyword">pub</span> <span class="hljs-keyword">struct</span> <span class="hljs-title class_">Account</span> &#123;<br>        <span class="hljs-comment">/// lamports in the account</span><br>        <span class="hljs-keyword">pub</span> lamports: <span class="hljs-type">u64</span>,<br>        <span class="hljs-comment">/// data held in this account</span><br>        <span class="hljs-meta">#[serde(with = <span class="hljs-string">&quot;serde_bytes&quot;</span>)]</span><br>        <span class="hljs-keyword">pub</span> data: <span class="hljs-type">Vec</span>&lt;<span class="hljs-type">u8</span>&gt;,<br>        <span class="hljs-comment">/// the program that owns this account. If executable, the program that loads this account.</span><br>        <span class="hljs-keyword">pub</span> owner: Pubkey,<br>        <span class="hljs-comment">/// this account&#x27;s data contains a loaded program (and is now read-only)</span><br>        <span class="hljs-keyword">pub</span> executable: <span class="hljs-type">bool</span>,<br>        <span class="hljs-comment">/// the epoch at which this account will next owe rent</span><br>        <span class="hljs-keyword">pub</span> rent_epoch: Epoch,<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<p>其中的lamports表示账号余额，data表示存储的内容，owner表示这个Account可以被谁来操作，类似文件所有者。 如果是合约账号，这里data的内容就是合约编译后的代码，同时executable为true。</p>
+<h4 id="Account-and-signature"><a href="#Account-and-signature" class="headerlink" title="Account and signature"></a>Account and signature</h4><p>Solana的签名系统使用的是 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/EdDSA#Ed25519">Ed25519</a> ,说人话就是： Ed25519是一种计算快，安全性高，且生成的签名内容小的一种不对称加密算法。新一代公链几乎都支持这个算法。</p>
+<p>所以Solana的，我们用户理解的账号，就是一串Ed25519的私钥，各种钱包里面的助记词，会被转换成随机数种子， 再用随机数种子来生成一个私钥，所以助记词最终也是换算成私钥。所以用户账号的本质就是私钥，而用户账号的地址 则是这私钥对应的公钥,优于公钥是二进制的，为了可读性，将其进行Base58编码后的值，就是这个账号的地址。 如：HawRVHh7t4d3H3bitWHFt25WhhoDmbJMCfWdESQQoYEy</p>
+<p>把这里的公钥和私钥放一起，就是所谓的Keypair，或者叫公私钥对。假设这里把私钥进行加密，并由用户来设置密码， 公钥作为这个私钥的索引。就实现了一个简单的钱包系统了。</p>
+<p>通过用户选择的公钥，加上密码，得到对应的私钥，再用私钥去操作的他的账号</p>
+<h4 id="Transaction"><a href="#Transaction" class="headerlink" title="Transaction"></a>Transaction</h4><p>交易就是链外数据和链上数据产生的一次交互。比如发起一笔转账，在StepN里面发起一次Claim动作。 交易是对多个交易指令的打包，所以起内容主要就是各个交易指令，以及相应指令对应的发起人和签名。Transaction 的定义为：</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-keyword">pub</span> <span class="hljs-keyword">struct</span> <span class="hljs-title class_">Message</span> &#123;<br>        <span class="hljs-keyword">pub</span> header: MessageHeader,<br>        <span class="hljs-meta">#[serde(with = <span class="hljs-string">&quot;short_vec&quot;</span>)]</span><br>        <span class="hljs-keyword">pub</span> account_keys: <span class="hljs-type">Vec</span>&lt;Pubkey&gt;,<br>        <span class="hljs-keyword">pub</span> recent_blockhash: Hash,<br>        <span class="hljs-meta">#[serde(with = <span class="hljs-string">&quot;short_vec&quot;</span>)]</span><br>        <span class="hljs-keyword">pub</span> instructions: <span class="hljs-type">Vec</span>&lt;CompiledInstruction&gt;,<br>        <span class="hljs-meta">#[serde(with = <span class="hljs-string">&quot;short_vec&quot;</span>)]</span><br>        <span class="hljs-keyword">pub</span> address_table_lookups: <span class="hljs-type">Vec</span>&lt;MessageAddressTableLookup&gt;,<br>    &#125;<br><br>    <span class="hljs-keyword">pub</span> <span class="hljs-keyword">enum</span> <span class="hljs-title class_">VersionedMessage</span> &#123;<br>        <span class="hljs-title function_ invoke__">Legacy</span>(LegacyMessage),<br>        <span class="hljs-title function_ invoke__">V0</span>(v0::Message),<br>    &#125;<br><br>    <span class="hljs-keyword">pub</span> <span class="hljs-keyword">struct</span> <span class="hljs-title class_">VersionedTransaction</span> &#123;<br>        <span class="hljs-comment">/// List of signatures</span><br>        <span class="hljs-meta">#[serde(with = <span class="hljs-string">&quot;short_vec&quot;</span>)]</span><br>        <span class="hljs-keyword">pub</span> signatures: <span class="hljs-type">Vec</span>&lt;Signature&gt;,<br>        <span class="hljs-comment">/// Message to sign.</span><br>        <span class="hljs-keyword">pub</span> message: VersionedMessage,<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<p>从中可以简单理解为，交易就是一连串的交易指令，以及需要签名的指令的签名内容。</p>
+<h4 id="交易指令"><a href="#交易指令" class="headerlink" title="交易指令"></a>交易指令</h4><p>上面说到的交易指令又是什么呢？先来看下定义：</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-keyword">pub</span> <span class="hljs-keyword">struct</span> <span class="hljs-title class_">CompiledInstruction</span> &#123;<br>        <span class="hljs-comment">/// Index into the transaction keys array indicating the program account that executes this instruction.</span><br>        <span class="hljs-keyword">pub</span> program_id_index: <span class="hljs-type">u8</span>,<br>        <span class="hljs-comment">/// Ordered indices into the transaction keys array indicating which accounts to pass to the program.</span><br>        <span class="hljs-meta">#[serde(with = <span class="hljs-string">&quot;short_vec&quot;</span>)]</span><br>        <span class="hljs-keyword">pub</span> accounts: <span class="hljs-type">Vec</span>&lt;<span class="hljs-type">u8</span>&gt;,<br>        <span class="hljs-comment">/// The program input data.</span><br>        <span class="hljs-meta">#[serde(with = <span class="hljs-string">&quot;short_vec&quot;</span>)]</span><br>        <span class="hljs-keyword">pub</span> data: <span class="hljs-type">Vec</span>&lt;<span class="hljs-type">u8</span>&gt;,<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<p>从这些成员变量名就可以猜到。交易指令就是 执行哪个合约(program_id_index),输入为数据data,执行过程 中需要用到哪些Account: accounts</p>
+<p>类似函数调用一样，program_id_index是函数名，因为合约都是用地址标识的，所以这里指在accounts数组中 的第几个地址。传入的参数包含两部分，二进制数据data和需要使用到的Account资源：accounts。</p>
+<img src="../../../Desktop/Typora_Picture/create_initialize_multiple_ix-20230801174709123.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+<h3 id="Contract"><a href="#Contract" class="headerlink" title="Contract"></a>Contract</h3><p>合约分为两类，一类是普通合约一类是系统合约，前者在Solana中称为”On Chain Program” 后者称为”Native Program” 其实本质都是类似其他公链上所说的合约。</p>
+<h4 id="System-contract"><a href="#System-contract" class="headerlink" title="System contract"></a>System contract</h4><p>系统合约是由节点在部署的时候生成的，普通用户无法更新，他们像普通合约一样，可以被其他合约或者RPC进行调用</p>
+<p>系统合约有</p>
+<ul>
+<li>System Program: 创建账号，转账等作用</li>
+<li>BPF Loader Program: 部署和更新合约</li>
+<li>Vote program: 创建并管理用户POS代理投票的状态和奖励</li>
+<li>…</li>
+</ul>
+<h4 id="General-contract"><a href="#General-contract" class="headerlink" title="General contract"></a>General contract</h4><p>一般我们说的合约都是普通合约，或者叫 “On Chain Program”。普通合约是由用户开发并部署，Solana官方也有 一些官方开发的合约，如Token、ATA账号等合约。</p>
+<p>当用户通过”BPF Loader Program”部署一个新合约的时候，新合约Account中的被标记为true，表示他是一个可以 被执行的合约账号。不同于有些公链，Solana上的合约是可以被更新的，也可以被销毁。并且当销毁的时候，用于存储 代码的账号所消耗的资源也会归还给部署者。</p>
+<h3 id="Contract与Account"><a href="#Contract与Account" class="headerlink" title="Contract与Account"></a>Contract与Account</h3><p>在上面的Account介绍中，我们有个owner的成员，这个就表示这个Account是被哪个合约管理的，或者说哪个 合约可以对这个Account进行读写，类似Linux操作系统中，文件属于哪个用户。</p>
+<p>比如一般合约，他的Owner都是BPF Loader：</p>
+<p><img src="/../../../Desktop/Typora_Picture/a_program-20230801174709128.png" srcset="/img/loading.gif" lazyload></p>
+<p>而存放我们代币余额的内容的ower都是Token合约：</p>
+<p><img src="/../../../Desktop/Typora_Picture/a_program_curl-20230801174709129.png" srcset="/img/loading.gif" lazyload></p>
+<p>对应的代币为：</p>
+<p><img src="/../../../Desktop/Typora_Picture/spl_account-20230801174709140.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li><p><strong>租约：</strong>Solana的资金模型中，每个 Solana 账户在区块链上存储数据的费用称为“租金”。 这种基于时间和空间的费用来保持账户及其数据在区块链上的活动为节点提供相应的收入。</p>
+<ul>
+<li><p>所有 Solana 账户（以及计划）都需要保持足够高的 LAMPORT 余额，才能免除租金并保留在 Solana 区块链上。</p>
+</li>
+<li><p>当帐户不再有足够的 LAMPORTS 来支付租金时，它将通过称为垃圾收集的过程从网络中删除。</p>
+</li>
+<li><p>注意：租金与交易费用不同。 支付租金（或保存在账户中）以将数据存储在 Solana 区块链上。 而交易费用是为了处理网络上的指令而支付的。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>租金率：</strong>Solana 租金率是在网络范围内设置的，主要基于每年每字节设置的 LAMPORTS。 目前，租金率为静态金额并存储在 Rent 系统变量中。</p>
+</li>
+<li><p><strong>免租：</strong>保持最低 LAMPORT 余额超过 2 年租金的账户被视为“免租金”，不会产生租金。每次账户余额减少时，都会检查该账户是否仍免租金。 导致账户余额低于租金豁免阈值的交易将会失败。</p>
+</li>
+<li><p><strong>垃圾收集：</strong>未保持租金豁免状态或余额不足以支付租金的帐户将通过称为垃圾收集的过程从网络中删除。 完成此过程是为了帮助减少不再使用&#x2F;维护的数据的网络范围存储。</p>
+</li>
+</ul>
+<h2 id="1-2-SPL-代币"><a href="#1-2-SPL-代币" class="headerlink" title="1.2 SPL 代币"></a>1.2 SPL 代币</h2><p>在以太坊中，普通代币被一个叫ERC20的提案定了规范，可以认为普通代币合约统一叫做ERC20代币。</p>
+<p>那么Solana世界里的ERC20代币是什么呢？答案就是SPL代币。</p>
+<blockquote>
+<p>The Solana Program Library (SPL) is a collection of on-chain programs targeting the Sealevel parallel runtime.</p>
+</blockquote>
+<p>SPL Token是 “ Solana Program Library”中的一个组成部分，叫做”Token Program”，简称为SPL Token。</p>
+<p>所有的代币都有这个合约来管理，该合约代码在 <a target="_blank" rel="noopener" href="https://github.com/solana-labs/solana-program-library/tree/master/token">https://github.com/solana-labs/solana-program-library/tree/master/token</a></p>
+<h3 id="代币信息"><a href="#代币信息" class="headerlink" title="代币信息"></a>代币信息</h3><p>不同于以太坊中，一个代币就是一个合约。</p>
+<p>SPL Token中，一个代币，仅仅是一个归Token合约管理的普通的Account对象，这个对象里面的二进制数据定义了 这个代币的基本属性。其结构为：</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Web3-0/" class="category-chain-item">Web3.0</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Web3-0/" class="print-no-link">#Web3.0</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Solana 开发者培训营</div>
+      <div>http://example.com/2023/08/01/Solana/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Rocky CHEN</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>August 1, 2023</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/07/22/Making%20peace%20with%20your%20death/" title="Making peace with your death">
+                        <span class="hidden-mobile">Making peace with your death</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script>
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          Fluid.utils.createCssLink('https://lib.baomitu.com/disqusjs/1.3.0/disqusjs.css');
+          Fluid.utils.createScript('https://lib.baomitu.com/disqusjs/1.3.0/disqus.js', function() {
+            new DisqusJS({
+              shortname: 'fluid',
+              apikey: ''
+            });
+          });
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.utils.listenDOMLoaded(function() {
+      Fluid.events.registerRefreshCallback(function() {
+        if ('mermaid' in window) {
+          mermaid.init();
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="http://ziyangchen.com/" target="_blank" rel="nofollow noopener"><span>Copyright © 2020-2023</span></a> <i class="iconfont icon-love"></i> <a href="http://ziyangchen.com/" target="_blank" rel="nofollow noopener"><span>Rocky CHEN</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
