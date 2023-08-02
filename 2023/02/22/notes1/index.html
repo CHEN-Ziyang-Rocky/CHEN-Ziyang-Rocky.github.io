@@ -1,0 +1,935 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://raw.githubusercontent.com/CHEN-Ziyang-Rocky/Image/main/IMG_4487.jpg">
+  <link rel="icon" href="https://raw.githubusercontent.com/CHEN-Ziyang-Rocky/Image/main/IMG_4487.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Rocky CHEN">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Made by Ziyang CHEN, Rocky, 陈子阳  Chapter 02$$\bf CF(A) &#x3D; OCF - CS - ΔNWC$$  CF(A) &#x3D; CF(B) + CF(S)   Debt (Cash Flow to Creditors, CF(B) ) &#x3D; Interest - change of debt &#x3D;  Interest -">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AF3313 Corporate Finance Review Notes">
+<meta property="og:url" content="http://example.com/2023/02/22/notes1/index.html">
+<meta property="og:site_name" content="Rocky Web">
+<meta property="og:description" content="Made by Ziyang CHEN, Rocky, 陈子阳  Chapter 02$$\bf CF(A) &#x3D; OCF - CS - ΔNWC$$  CF(A) &#x3D; CF(B) + CF(S)   Debt (Cash Flow to Creditors, CF(B) ) &#x3D; Interest - change of debt &#x3D;  Interest -">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img2.baidu.com/it/u=2689355618,4128320886&fm=253&fmt=auto&app=138&f=JPEG?w=465&h=322">
+<meta property="article:published_time" content="2023-02-21T16:50:00.000Z">
+<meta property="article:modified_time" content="2023-08-02T13:50:55.098Z">
+<meta property="article:author" content="Rocky CHEN">
+<meta property="article:tag" content="Corporate Finance">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img2.baidu.com/it/u=2689355618,4128320886&fm=253&fmt=auto&app=138&f=JPEG?w=465&h=322">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>AF3313 Corporate Finance Review Notes - Rocky Web</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Rocky Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>主页 | Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-books"></i>
+                <span>目录 | Contents</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于 | About</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-stack-overflow-fill"></i>
+                <span>更多 | More</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>博客 | Blog</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    <span>标签 | Tag</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/links/">
+                    <i class="iconfont icon-friends"></i>
+                    <span>伙伴 | Friends</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://img2.baidu.com/it/u=2689355618,4128320886&fm=253&fmt=auto&app=138&f=JPEG?w=465&h=322') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="AF3313 Corporate Finance Review Notes"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-02-22 00:50" pubdate>
+          Wednesday, February 22nd 2023, 12:50 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          6.3k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          53 mins
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> times
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">AF3313 Corporate Finance Review Notes</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><em><strong>Made by Ziyang CHEN, Rocky, 陈子阳</strong></em></p>
+<hr>
+<h2 id="Chapter-02"><a href="#Chapter-02" class="headerlink" title="Chapter 02"></a>Chapter 02</h2><p>$$<br>\bf CF(A) &#x3D; OCF - CS - ΔNWC<br>$$</p>
+<ul>
+<li><p><strong>CF(A) &#x3D; CF(B) <em>+</em> CF(S)</strong> </p>
+<ul>
+<li><p><strong>Debt (Cash Flow to Creditors, CF(B) )</strong> &#x3D; Interest - change of debt &#x3D;  Interest - (New debt - Retirement&#x2F;payback&#x2F;redeemed of debt)</p>
+</li>
+<li><p><strong>Equity (Cash Flow to Stockholders, CF(S) )</strong> &#x3D; Dividends + Repurchase of stock - new stock issue</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Operating cash flow(OCF)</strong> &#x3D; EBIT + Depreciation – Taxes &#x3D; Net income + Depreciation &#x3D; Sales - Costs - Taxex &#x3D; (Sales - Costs)(1-T) + Depreciation*T</p>
+</li>
+<li><p><strong>Capital spending</strong> &#x3D; 购买&#x2F;维修 PPE &#x3D; Purchase(Acquisitions) of fixed assets - Sales of fixed assets</p>
+</li>
+<li><p><strong>Additions to net working capital</strong> &#x3D; ΔNWC &#x3D; change of NWC -&gt; sum &#x3D; 0</p>
+<ul>
+<li><strong>Net Working Capital (NWC)</strong> &#x3D; current asset - current liability</li>
+</ul>
+</li>
+</ul>
+<p><strong>Income Statement</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Sales</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">- Cost of goods sold</td>
+</tr>
+<tr>
+<td align="left">- Selling costs&#x2F;expenses</td>
+</tr>
+<tr>
+<td align="left">- Depreciation</td>
+</tr>
+<tr>
+<td align="left"><strong>EBIT</strong></td>
+</tr>
+<tr>
+<td align="left">- Interest</td>
+</tr>
+<tr>
+<td align="left"><strong>Taxable income</strong></td>
+</tr>
+<tr>
+<td align="left">- Taxes (Current + Deffered)</td>
+</tr>
+<tr>
+<td align="left">**&#x3D; Net income **(Addition to retained earnings + Dividends)</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>OCF</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>- Capital spending</strong> (购买&#x2F;维修 PPE)</td>
+</tr>
+<tr>
+<td><strong>- NWC</strong> (sum&#x3D;0)</td>
+</tr>
+<tr>
+<td><strong>&#x3D; incremental Cash Flow, CF(A)</strong></td>
+</tr>
+</tbody></table>
+<h2 id="Chapter-04-Discounted-Cash-Flow-Valuation"><a href="#Chapter-04-Discounted-Cash-Flow-Valuation" class="headerlink" title="Chapter 04. Discounted Cash Flow Valuation"></a>Chapter 04. Discounted Cash Flow Valuation</h2><ul>
+<li><p><strong>The One-Period Case</strong><br>$$<br>\bf FV&#x3D;C_0(1+r)\ \ \ \ \ \ \ \ \ \ PV&#x3D;\frac{C_1}{1+r}<br>$$</p>
+</li>
+<li><p><strong>The Multiperiod Case</strong></p>
+<ul>
+<li><p>Compounding 复利和<strong>Compounding Periods 多年期复利</strong>, 拿现在的钱去算将来的钱</p>
+</li>
+<li><p><strong>r代表一个单位，T代表一共多少个单位</strong><br>$$<br>\bf FV&#x3D;C_0(1+r)^T\ \ ➡️\ \ FV&#x3D;C_0(1+\frac{r}{m})^{mT}<br>$$</p>
+</li>
+<li><p>Present Value and Discounting 现金与折现, 拿将来的钱去算现在的钱<br>$$<br>\bf PV&#x3D;\frac{C_T}{(1+r)^T}<br>$$</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Simplifications 简化</strong></p>
+<p>PV 算的是 one period before the first payment</p>
+<ul>
+<li><p><strong>Perpetuity 永续年金:</strong> 源源不断的现金流 <strong>(生命周期无限)</strong><br>$$<br>\bf PV&#x3D;\frac{C}{r}<br>$$</p>
+</li>
+<li><p><strong>Growing perpetuity 增长性永续年金:</strong> 能始终以某固定的增长率保持增长的一系列现金流 <strong>(生命周期无限 + 有增长率g)</strong><br>$$<br>\bf PV&#x3D;\frac{C}{r-g}<br>$$</p>
+</li>
+<li><p><strong>Annuity 年金:</strong> 一系列稳定有规律的、**持续一段固定时期(T)**的现金收付活动  <strong>(生命周期有限T)</strong><br>$$<br>\bf PV&#x3D;\frac{C}{r}[1-\frac{1}{(1+r)^T}]<br>\\bf FV &#x3D; PV(1+r)^T<br>$$</p>
+</li>
+<li><p><strong>Growing annuity 增长型年金:</strong> **在一定时期内(T)**，保持以固定比率增长的一系列现金流  <strong>(生命周期有限T + 有增长率g)</strong><br>$$<br>\bf PV&#x3D;\frac{C}{r-g}[1-(\frac{1+g}{(1+r)})^T]<br>$$</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Chapter-05-NPV-amp-Other-Investment-Rules"><a href="#Chapter-05-NPV-amp-Other-Investment-Rules" class="headerlink" title="Chapter 05. NPV &amp; Other Investment Rules"></a>Chapter 05. NPV &amp; Other Investment Rules</h2><p>Independent Projects(独立项目)，可以都选。</p>
+<p>Mutually Exclusive Projects(互斥项目)，只能二选一。</p>
+<ul>
+<li><strong>Net Present Value (NPV): 越高越好</strong><ul>
+<li><p><strong>NPV</strong> is the sum of the present value of the cash flows from the project</p>
+</li>
+<li><p>最低可接受法则为：<strong>如果 NPV ＞0，则接受项目</strong></p>
+</li>
+<li><p>排序法则：<strong>选择NPV最高的项目</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>$$<br>\bf NPV&#x3D;C_0+\frac{C_1}{1+r}+\frac{C_2}{(1+r)^2}+…+\frac{C_t}{(1+r)^t}&#x3D;C_0+\sum_{t&#x3D;1}^T \frac{C_t}{(1+r)^t}\\bf C_0&#x3D;positive\ cash\ flows,\ represents\ cash\ receipts\<br>\bf C_0&#x3D;negative\ cash\ flow,\ represents\ cash\ payment<br>$$</p>
+<ul>
+<li><strong>Profitability Index (PI): 选&gt;0</strong></li>
+</ul>
+<p>$$<br>  \bf PI_2&#x3D;\frac{PV}{-C_0}&#x3D;\frac{\frac{C_1}{(1+r)}+\frac{C_2}{(1+r)^2}+…+\frac{C_T}{(1+r)^T}}{-C_0}\ (accept,\ if\ PI_2&gt;1)\\ PI_1 和 PI_2 在项目选择方面应该有相同的答案，因为它们等同于数字相差1<br>$$</p>
+<ul>
+<li><p><strong>Discount Payback Period (DPB): 越小越好</strong></p>
+<ul>
+<li><p>how long it takes to payback on <strong>a discounted basis</strong> 在折扣的基础上需要多长时间才能收回</p>
+</li>
+<li><p>$$<br>\bf Cash\ Flow\ of\ Present\ Value(PV) &#x3D; \frac{C_T}{(1+r)^T}<br>$$</p>
+</li>
+</ul>
+<p><img src="/../../../Desktop/previous%2520and%2520others'%2520file/AF3313%2520Business%2520Finance/Typora_Picture/image-20230223012859304.png" srcset="/img/loading.gif" lazyload alt="image-20230223012859304"></p>
+</li>
+</ul>
+<h2 id="Chapter-06-Making-Capital-Investment-Decisions"><a href="#Chapter-06-Making-Capital-Investment-Decisions" class="headerlink" title="Chapter 06. Making Capital Investment Decisions"></a>Chapter 06. Making Capital Investment Decisions</h2><p><img src="/../../../Desktop/previous%2520and%2520others'%2520file/AF3313%2520Business%2520Finance/Typora_Picture/Screenshot%25202023-03-01%2520at%252012.51.06.png" srcset="/img/loading.gif" lazyload alt="Screenshot 2023-03-01 at 12.51.06"></p>
+<ul>
+<li><strong>Incremental Cash Flows &#x3D; Cash Flow From Assets  (CFFA)</strong></li>
+</ul>
+<p>$$<br>\bf Earnings ≠ Cash<br>$$</p>
+<ul>
+<li>if the value is <strong>positive</strong> then it is a <strong>cash inflow</strong>. If the value is <strong>negative</strong>, then it is a <strong>cash outflow</strong></li>
+</ul>
+<p>$$<br>\bf CFFA &#x3D; OCF - CS - ΔNWC</p>
+<p>\\bf CS &#x3D; capital\ spending\ (购买&#x2F;维修\ PPE)</p>
+<p>\\bf ΔNWC&#x3D;change\ in\ net\ working\ capital\ (current\ assets-current\ liabilities)<br>$$</p>
+<ul>
+<li><p><strong>Operating Cash Flows (OCFs)</strong></p>
+<ul>
+<li>公司运营产生的现金流量<br>$$<br>\bf Bottom\ Up:\ OCF &#x3D; Net Income + depreciation<br>\\bf Top\ Down: OCF &#x3D; Sales – Costs – Taxes<br>\\bf Tax\ Shield: OCF &#x3D; (Sales – Costs)(1 – T) + Depreciation*T\ (T是税率)<br>\\bf Net\ Income(NI)&#x3D;(sales-costs)-Depreciation<br>$$</li>
+</ul>
+</li>
+<li><p><strong>Change in Net working Capital (ΔNWC)</strong></p>
+</li>
+<li><p><strong>After-tax Salvage</strong>, salvage &#x3D; Market value<br>$$<br>\bf After\ tax\ salvage &#x3D; Salvage – T(Salvage\ –\ Book\ value)&#x3D;MV-T(MV-BV)<br>$$</p>
+</li>
+</ul>
+<h2 id="Lecture-06-Chapter-26-28"><a href="#Lecture-06-Chapter-26-28" class="headerlink" title="Lecture 06 Chapter 26-28"></a>Lecture 06 Chapter 26-28</h2><p>$$<br>\bf Inventory\ turnover&#x3D;\frac{Cost\ of\ Good\ Sold}{Average\ inventory}<br>\\bf Inventory\ period&#x3D;\frac{365}{Inventory\ turnover}<br>\——————————————<br>\\bf Accounts\ Receivable\ turnover&#x3D;\frac{Sales}{Average\ Accounts\ receivable}<br>\\bf Accounts\ Receivable\ period&#x3D;\frac{365}{Accounts\ receivable\ turnover}<br>\——————————————<br>\\bf Accounts\ Payable\ turnover&#x3D;\frac{Cost\ of\ Good\ Sold}{Average\ Accounts\ Payable}<br>\\bf Accounts\ Payable\ period&#x3D;\frac{365}{Accounts\ Payable\ turnover}<br>$$</p>
+<ul>
+<li><strong>Credit Management</strong></li>
+</ul>
+<p>$$<br>\bf One\ Time\ Sale:\ NPV &#x3D; -v + \frac{(1 - \pi)P}{(1 + r)}<br>\\bf Repeat\ Customers:\ NPV &#x3D; -v + \frac{(1-\pi)(P – v)}{r},\ \ \ defaults\ once,\ NO\ grant\ credit\ again<br>\\bf \ \ v&#x3D;variable\ cost;\ \pi &#x3D;default\ probability\ 违约率;\ P&#x3D;current\ price;\ r&#x3D;required\ return\ rate<br>$$</p>
+<h2 id="Chapter-08-09-Valuation-of-Bonds-amp-Stocks"><a href="#Chapter-08-09-Valuation-of-Bonds-amp-Stocks" class="headerlink" title="Chapter 08-09 Valuation of Bonds &amp; Stocks"></a>Chapter 08-09 Valuation of Bonds &amp; Stocks</h2><ul>
+<li><p><strong>Bond (债券)</strong><br>$$<br>\bf Bond\ value &#x3D; \frac{C}{r} × [{1-\frac{1}{(1+r)^T}}]+\frac{FV}{(1+r)^T}<br>\\bf C: Coupon\ paid\ each\ period&#x3D;Coupon\ rate*FV<br>\\bf interest\ rates ⬆️\ present\ values ⬇️,\ interest\ rates ⬆️\ bond\ prices ⬇️<br>$$</p>
+</li>
+<li><p><strong>Stocks (股票)</strong></p>
+<ul>
+<li><p><strong>Zero Growth</strong> (Dividends will remain at the sa‘；me level forever) 生命周期无限，未来现金流是恒定的<br>$$<br>\bf P_0&#x3D;\frac{Div_1}{R}<br>$$</p>
+</li>
+<li><p><strong>Constant Growth</strong> (Dividends will grow at a constant rate “<strong>g</strong>“, forever) 生命周期无限，未来现金流永远以 g 增长<br>$$<br>\bf P_0&#x3D;\frac{Div_1}{R-g}\\bf R(cost\ of\ equity)&#x3D;Dividend\ yield+Capital\ gains\ yeild&#x3D;\frac{Div_1}{P_0}+g<br>$$</p>
+</li>
+<li><p><strong>Differential Growth</strong> (Dividends will *<em>grow at rate <em>g</em>1 for <em>N</em> years</em>* and *<em>grow at rate <em>g</em>2 thereafter</em>*.<br>$$<br>\bf P_0&#x3D;\frac{C_0×(1+g_1)}{r-g_1}[1-\frac{(1+g_1)^T}{(1+r)^T}]+\frac{\frac{C_0×(1+g_1)^T(1+g_2)}{R-g_2}}{(1+r)^T}<br>\——————————————-<br>\\bf P_n&#x3D;\frac{last\ divident\ forever}{r}<br>\\bf P_0&#x3D;\frac{C_1}{(1+r)}+\frac{C_2}{(1+r)^2}+…+\frac{C_n+P_n}{(1+r)^n}<br>$$</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Chapter-11-The-Capital-Asset-Pricing-Model"><a href="#Chapter-11-The-Capital-Asset-Pricing-Model" class="headerlink" title="Chapter 11 The Capital Asset Pricing Model"></a>Chapter 11 The Capital Asset Pricing Model</h2><ul>
+<li><p><strong>Portfolios (证券投资组合)</strong></p>
+</li>
+<li><p><strong>Capital Asset Pricing Model (CAPM)</strong></p>
+</li>
+<li><p><strong>Capital market line (CML)</strong></p>
+</li>
+</ul>
+<h2 id="Final"><a href="#Final" class="headerlink" title="Final"></a><u>Final</u></h2><p><strong>Debt(Creditors) versus Equity(Shareholder)</strong></p>
+<ul>
+<li><strong>Creditors</strong> generally receive the <strong><u>first claim on the firm’s cash flow</u></strong>, and they receive a <strong>fixed interest rate</strong> regardless of the performance of the business. </li>
+<li><strong>Shareholder’s equity</strong> is the <strong><u>residual difference between assets and liabilities</u></strong>, and they receive <strong>dividends or capital gains</strong> only if the business makes enough profit. </li>
+<li><strong>Shareholder’s equity take on more risk</strong> but also have a <strong>greater return</strong> than debt holders (Creditors).</li>
+</ul>
+<p><strong>The dividend growth model calculates total return, the total return of stock:</strong></p>
+<ul>
+<li><strong>The required return (R)</strong> has two components. </li>
+<li><strong>Dividend yield (Div&#x2F;P):</strong> This is calculated as the <u><strong>expected cash dividend (D)</strong></u> divided by <u><strong>the current price (P).</strong></u></li>
+<li><strong>Capital gains yield &#x2F; Dividend growth rate (g):</strong> The rate at which <strong><u>the value of the investment grows</u>.</strong></li>
+</ul>
+<p><strong>The CAPM suggests that the expected return is a function of</strong> </p>
+<ul>
+<li><p>**Risk-free rate of return: **is the <strong><u>pure time value of money</u>.</strong> </p>
+</li>
+<li><p>**Beta: **is <strong><u>the amount of systematic risk present in a particular asset</u>.</strong> 特定资产中存在的系统性风险</p>
+</li>
+<li><p><strong>Market risk premium:</strong> is <strong><u>the reward for bearing systematic risk</u>.</strong> 承担系统性风险的回报</p>
+</li>
+<li><p>A <strong>flexible short-term finance policy</strong> would maintain a <strong>high</strong> ratio of current assets to sales.</p>
+<ul>
+<li>Keeping large <strong>cash balances</strong> and <strong>investments in marketable securities</strong></li>
+<li>Large investments in <strong>inventory</strong> </li>
+<li><strong>Liberal credit terms</strong></li>
+</ul>
+</li>
+<li><p>A <strong>restrictive short-term finance policy</strong> would maintain a <strong>low</strong> ratio of current assets to sales.</p>
+<ul>
+<li>Keeping low cash balances, no investment in marketable securities</li>
+<li>Making small investments in inventory</li>
+<li>Allowing no credit sales (thus no accounts receivable)</li>
+</ul>
+</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Corporate-Finance/" class="category-chain-item">Corporate Finance</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Corporate-Finance/Notes/" class="category-chain-item">Notes</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Corporate-Finance/" class="print-no-link">#Corporate Finance</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>AF3313 Corporate Finance Review Notes</div>
+      <div>http://example.com/2023/02/22/notes1/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Rocky CHEN</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>February 22, 2023</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/03/01/vlog22/" title="香港留学vlog#22｜维港散步｜小狼上街｜散步学校">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">香港留学vlog#22｜维港散步｜小狼上街｜散步学校</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/02/19/vlog21/" title="香港留学vlog#21｜从维港到 -- 元创方｜利东街｜PMQ｜Lee Tung St.">
+                        <span class="hidden-mobile">香港留学vlog#21｜从维港到 -- 元创方｜利东街｜PMQ｜Lee Tung St.</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script>
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          Fluid.utils.createCssLink('https://lib.baomitu.com/disqusjs/1.3.0/disqusjs.css');
+          Fluid.utils.createScript('https://lib.baomitu.com/disqusjs/1.3.0/disqus.js', function() {
+            new DisqusJS({
+              shortname: 'fluid',
+              apikey: ''
+            });
+          });
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  <script>
+  Fluid.utils.createScript('https://lib.baomitu.com/mermaid/8.14.0/mermaid.min.js', function() {
+    mermaid.initialize({"theme":"default"});
+
+    Fluid.utils.listenDOMLoaded(function() {
+      Fluid.events.registerRefreshCallback(function() {
+        if ('mermaid' in window) {
+          mermaid.init();
+        }
+      });
+    });
+  });
+</script>
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="http://ziyangchen.com/" target="_blank" rel="nofollow noopener"><span>Copyright © 2020-2023</span></a> <i class="iconfont icon-love"></i> <a href="http://ziyangchen.com/" target="_blank" rel="nofollow noopener"><span>Rocky CHEN</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
