@@ -14,7 +14,7 @@
   
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
-  <meta name="theme-color" content="#2f4154">
+  <meta name="theme-color" content="#252626">
   <meta name="author" content="Rocky CHEN">
   <meta name="keywords" content="">
   
@@ -62,7 +62,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[],"cursor_effect":"fireworks"},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[],"cursor_effect":"fireworks"},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":true,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -72,6 +72,33 @@
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
   
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
   
@@ -743,48 +770,6 @@
     
     <div class="category row nomargin-x">
       <a class="category-item collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Projects"
-        id="heading-54e1d44609e3abed11f6e1eb6ae54988" role="tab" data-toggle="collapse" href="#collapse-54e1d44609e3abed11f6e1eb6ae54988"
-        aria-expanded="false"
-      >
-        Projects
-        <span class="list-group-count"></span>
-        <i class="iconfont icon-arrowright"></i>
-      </a>
-      
-        <a href="/categories/Projects/" class="category-count col-2 col-md-1 col-xm-1">
-          <i class="iconfont icon-articles"></i>
-          <span>1</span>
-        </a>
-      
-      <div class="category-collapse collapse " id="collapse-54e1d44609e3abed11f6e1eb6ae54988"
-           role="tabpanel" aria-labelledby="heading-54e1d44609e3abed11f6e1eb6ae54988">
-        
-        
-          
-  <div class="category-post-list">
-    
-    
-      
-      
-        <a href="/2023/06/26/ProjectsDescription/" title="All My Projects Description"
-           class="list-group-item list-group-item-action
-           ">
-          <span class="category-post">All My Projects Description</span>
-        </a>
-      
-    
-  </div>
-
-        
-      </div>
-    </div>
-  
-    
-    
-    
-    <div class="category row nomargin-x">
-      <a class="category-item collapsed
           list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Due diligence"
         id="heading-65e0cfc06307ff2cead717280d956d95" role="tab" data-toggle="collapse" href="#collapse-65e0cfc06307ff2cead717280d956d95"
         aria-expanded="false"
@@ -813,6 +798,48 @@
            class="list-group-item list-group-item-action
            ">
           <span class="category-post">投资尽职调查｜Investment due diligence</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item collapsed
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Philosophy"
+        id="heading-e5348e0c46480066c8c2176421798201" role="tab" data-toggle="collapse" href="#collapse-e5348e0c46480066c8c2176421798201"
+        aria-expanded="false"
+      >
+        Philosophy
+        <span class="list-group-count"></span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+        <a href="/categories/Philosophy/" class="category-count col-2 col-md-1 col-xm-1">
+          <i class="iconfont icon-articles"></i>
+          <span>1</span>
+        </a>
+      
+      <div class="category-collapse collapse " id="collapse-e5348e0c46480066c8c2176421798201"
+           role="tabpanel" aria-labelledby="heading-e5348e0c46480066c8c2176421798201">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2023/07/22/Making%20peace%20with%20your%20death/" title="Making peace with your death"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Making peace with your death</span>
         </a>
       
     
@@ -869,22 +896,22 @@
     
     <div class="category row nomargin-x">
       <a class="category-item collapsed
-          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Philosophy"
-        id="heading-e5348e0c46480066c8c2176421798201" role="tab" data-toggle="collapse" href="#collapse-e5348e0c46480066c8c2176421798201"
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="Projects"
+        id="heading-54e1d44609e3abed11f6e1eb6ae54988" role="tab" data-toggle="collapse" href="#collapse-54e1d44609e3abed11f6e1eb6ae54988"
         aria-expanded="false"
       >
-        Philosophy
+        Projects
         <span class="list-group-count"></span>
         <i class="iconfont icon-arrowright"></i>
       </a>
       
-        <a href="/categories/Philosophy/" class="category-count col-2 col-md-1 col-xm-1">
+        <a href="/categories/Projects/" class="category-count col-2 col-md-1 col-xm-1">
           <i class="iconfont icon-articles"></i>
           <span>1</span>
         </a>
       
-      <div class="category-collapse collapse " id="collapse-e5348e0c46480066c8c2176421798201"
-           role="tabpanel" aria-labelledby="heading-e5348e0c46480066c8c2176421798201">
+      <div class="category-collapse collapse " id="collapse-54e1d44609e3abed11f6e1eb6ae54988"
+           role="tabpanel" aria-labelledby="heading-54e1d44609e3abed11f6e1eb6ae54988">
         
         
           
@@ -893,10 +920,10 @@
     
       
       
-        <a href="/2023/07/22/Making%20peace%20with%20your%20death/" title="Making peace with your death"
+        <a href="/2023/06/26/ProjectsDescription/" title="All My Projects Description"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">Making peace with your death</span>
+          <span class="category-post">All My Projects Description</span>
         </a>
       
     
@@ -1163,7 +1190,7 @@
   <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
 
   <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.configure({"showSpinner":true,"trickleSpeed":100})
     NProgress.start()
     window.addEventListener('load', function() {
       NProgress.done();
