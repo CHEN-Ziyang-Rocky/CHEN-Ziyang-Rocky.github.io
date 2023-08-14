@@ -12,6 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="Rocky CHEN">
   <meta name="keywords" content="">
@@ -25,7 +27,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img0.baidu.com/it/u=1133318621,210142231&fm=253&fmt=auto&app=120&f=JPEG?w=1043&h=575">
 <meta property="article:published_time" content="2023-08-11T04:02:00.000Z">
-<meta property="article:modified_time" content="2023-08-11T12:19:32.375Z">
+<meta property="article:modified_time" content="2023-08-13T08:51:46.215Z">
 <meta property="article:author" content="Rocky CHEN">
 <meta property="article:tag" content="Web3.0">
 <meta name="twitter:card" content="summary_large_image">
@@ -73,7 +75,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[],"cursor_effect":"fireworks"},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -241,7 +243,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          29k words
+          32k words
         
       </span>
     
@@ -252,7 +254,7 @@
         
         
         
-          244 mins
+          271 mins
         
       </span>
     
@@ -664,7 +666,44 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs solidity">wscat -c wss://api.testnet.solana.com<br>    Connected (press CTRL+C to quit)<br>    &gt; &#123;&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:1,&quot;method&quot;:&quot;signatureSubscribe&quot;,&quot;params&quot;:[&quot;BfQAbgqQZMfsxFHwh6Hve8yGb843QfZcYtD2j2nN3K1hLHZrQjzdwG9uWgNkGXs4tBNVLE3JAzvNLtwJBt3zDsN&quot;,&#123;&quot;commitment&quot;:&quot;finalized&quot;,&quot;enableReceivedNotification&quot;:false&#125;]&#125;<br>    &lt; &#123;&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:3285176,&quot;id&quot;:1&#125;<br>    &lt; &#123;&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;signatureNotification&quot;,&quot;params&quot;:&#123;&quot;result&quot;:&#123;&quot;context&quot;:&#123;&quot;slot&quot;:209127740&#125;,&quot;value&quot;:&#123;&quot;err&quot;:null&#125;&#125;,&quot;subscription&quot;:3285176&#125;&#125;<br></code></pre></td></tr></table></figure>
 
 <p>可以看到。当到达”finalized”状态时，通知我们，该交易已经成功，没有出错。</p>
+<h2 id="2-4-课后练习"><a href="#2-4-课后练习" class="headerlink" title="2.4 课后练习"></a>2.4 课后练习</h2><p>通过curl和wscat命令行来模拟一个监视钱包动作。提示：</p>
+<ul>
+<li>创建一个新账号</li>
+<li>实时展示余额变化</li>
+<li>列出已知SPL-Token的余额</li>
+<li>实时展示SPL-Token余额变化</li>
+</ul>
+<h3 id="1-创建账号"><a href="#1-创建账号" class="headerlink" title="1. 创建账号"></a>1. 创建账号</h3><p>我们复用前面的账号</p>
+<ul>
+<li>SOL账号： Czorr4y9oFvE3VdfCLVFuKDYxaNUG1iyQomR7kMZUuzi</li>
+<li>SPL-Token(Mint Account): 7vtXvye2ECB1T5Se8E1KebNfmV7t4VkaULDjf2v1xpA9</li>
+<li>Token Account: EZhhUANUMKsRhRMArczio1kLc9axefTUAh5xofGX35AK</li>
+</ul>
+<h3 id="2-订阅SOL余额变化"><a href="#2-订阅SOL余额变化" class="headerlink" title="2. 订阅SOL余额变化"></a>2. 订阅SOL余额变化</h3><p>这个其实已经在课上演示过了。详情可以查看视频录像以及教程中的”订阅Account变化”章节</p>
+<h3 id="3-展示SPL-Token变化"><a href="#3-展示SPL-Token变化" class="headerlink" title="3. 展示SPL-Token变化"></a>3. 展示SPL-Token变化</h3><p>早期的钱包是通过官方的 <a target="_blank" rel="noopener" href="https://github.com/solana-labs/token-list">token-list</a> 来获得 已知的SPL-Token，现在则通过Metaplex的FT标准查询。除此之外还可以通过订阅Token合约管理的账户变化 来判断是否有Owner为自己的 Token Account被创建。</p>
+<p>这里我们假设第一种情况，钱包只维护知名token或者用户自己添加的Token，比如上面的 “7vtXvye2ECB1T5Se8E1KebNfmV7t4VkaULDjf2v1xpA9”</p>
+<p>我们首先获取这个SPL-Token下我们有多少 Token Account:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs solidity">curl  https://api.devnet.solana.com -X POST -H &quot;Content-Type: application/json&quot; -d &#x27;<br>        &#123;<br>            &quot;jsonrpc&quot;: &quot;2.0&quot;,<br>            &quot;id&quot;: 1,<br>            &quot;method&quot;: &quot;getTokenAccountsByOwner&quot;,<br>            &quot;params&quot;: [<br>            &quot;Czorr4y9oFvE3VdfCLVFuKDYxaNUG1iyQomR7kMZUuzi&quot;,<br>            &#123;<br>                &quot;mint&quot;: &quot;7vtXvye2ECB1T5Se8E1KebNfmV7t4VkaULDjf2v1xpA9&quot;<br>            &#125;,<br>            &#123;<br>                &quot;encoding&quot;: &quot;jsonParsed&quot;<br>            &#125;<br>            ]<br>        &#125;<br>    &#x27;<br></code></pre></td></tr></table></figure>
 
+<p>这里根据结果发现只有一个 “EZhhUANUMKsRhRMArczio1kLc9axefTUAh5xofGX35AK”</p>
+<p>那么我们只需要按照教程里面，订阅这个Account的变化就可以了。如果有多个，那么就订阅多个。 在重复对其他 SPL-Token做同样操作，既可以完成SPL-Token钱包的功能。</p>
+<p>首先建立websocket链接，并发起对这个Account的订阅：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs solidity">wscat -c wscat -c wss://api.devnet.solana.com  --proxy=http://127.0.0.1:1087<br>Connected (press CTRL+C to quit)<br>&gt;  &#123;&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:1,&quot;method&quot;:&quot;accountSubscribe&quot;,&quot;params&quot;:[&quot;EZhhUANUMKsRhRMArczio1kLc9axefTUAh5xofGX35AK&quot;,&#123;&quot;encoding&quot;:&quot;jsonParsed&quot;,&quot;commitment&quot;:&quot;finalized&quot;&#125;]&#125;<br></code></pre></td></tr></table></figure>
+
+<p>然后再另一个终端，用”spl-token”命令行来进行转账:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs solidity">spl-token transfer --fund-recipient  7vtXvye2ECB1T5Se8E1KebNfmV7t4VkaULDjf2v1xpA9 1 BBy1K96Y3bohNeiZTHuQyB53LcfZv6NWCSWqQp89TiVu<br>Transfer 1 tokens<br>  Sender: EZhhUANUMKsRhRMArczio1kLc9axefTUAh5xofGX35AK<br>  Recipient: BBy1K96Y3bohNeiZTHuQyB53LcfZv6NWCSWqQp89TiVu<br>  Recipient associated token account: H1jfKknnnyfFGYPVRd4ZHwUbXLF4PbFSWSH6wMJq6EK9<br><br>Signature: 3paamDSKFk5depKufcDjmJ8wc3eXte3qcgtitFu4TyDi8z9GTXMrLGEgPHgQMnAzFBXYoWxyF5JFzA54Fjvi2ZUK<br></code></pre></td></tr></table></figure>
+
+<p>接着我们就可以在前面的监听中收到：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs solidity">&lt; &#123;&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;accountNotification&quot;,&quot;params&quot;:&#123;&quot;result&quot;:&#123;&quot;context&quot;:&#123;&quot;slot&quot;:236334118&#125;,&quot;value&quot;:&#123;&quot;lamports&quot;:2039280,&quot;data&quot;:&#123;&quot;program&quot;:&quot;spl-token&quot;,&quot;parsed&quot;:&#123;&quot;info&quot;:&#123;&quot;isNative&quot;:false,&quot;mint&quot;:&quot;7vtXvye2ECB1T5Se8E1KebNfmV7t4VkaULDjf2v1xpA9&quot;,&quot;owner&quot;:&quot;Czorr4y9oFvE3VdfCLVFuKDYxaNUG1iyQomR7kMZUuzi&quot;,&quot;state&quot;:&quot;initialized&quot;,&quot;tokenAmount&quot;:&#123;&quot;amount&quot;:&quot;92000000000&quot;,&quot;decimals&quot;:9,&quot;uiAmount&quot;:92.0,&quot;uiAmountString&quot;:&quot;92&quot;&#125;&#125;,&quot;type&quot;:&quot;account&quot;&#125;,&quot;space&quot;:165&#125;,&quot;owner&quot;:&quot;TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA&quot;,&quot;executable&quot;:false,&quot;rentEpoch&quot;:0,&quot;space&quot;:165&#125;&#125;,&quot;subscription&quot;:18067841&#125;&#125;<br></code></pre></td></tr></table></figure>
+
+<p>可以看到当前余额为92了。我们在用”balance”确认下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs solidity">spl-token balance 7vtXvye2ECB1T5Se8E1KebNfmV7t4VkaULDjf2v1xpA9<br>92<br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="03-与Solana合约交互"><a href="#03-与Solana合约交互" class="headerlink" title="03. 与Solana合约交互"></a><u>03. 与Solana合约交互</u></h1><h2 id="3-1-Solana的Web3-js"><a href="#3-1-Solana的Web3-js" class="headerlink" title="3.1 Solana的Web3.js"></a>3.1 Solana的Web3.js</h2><h2 id="3-2-与钱包交互"><a href="#3-2-与钱包交互" class="headerlink" title="3.2 与钱包交互"></a>3.2 与钱包交互</h2><h2 id="3-3-合约调用"><a href="#3-3-合约调用" class="headerlink" title="3.3 合约调用"></a>3.3 合约调用</h2><h2 id="3-4-课后练习"><a href="#3-4-课后练习" class="headerlink" title="3.4 课后练习"></a>3.4 课后练习</h2>
                 
               </div>
             
@@ -902,11 +941,37 @@
 
   <footer>
     <div class="footer-inner">
+  <!-- 鼠标特效 -->
+  <script type="text/javascript" src="/js/click.js"></script>
   
     <div class="footer-content">
-       <a href="http://ziyangchen.com/" target="_blank" rel="nofollow noopener"><span>Copyright © 2020-2023</span></a> <i class="iconfont icon-love"></i> <a href="http://ziyangchen.com/" target="_blank" rel="nofollow noopener"><span>Rocky CHEN</span></a> 
+       <a href="https://ziyangchen.com/" target="_blank" rel="nofollow noopener"><span>Copyright © 2020-2023</span></a> <i class="iconfont icon-love"></i> <a href="https://ziyangchen.com/" target="_blank" rel="nofollow noopener"><span>Rocky CHEN</span></a> 
     </div>
   
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
   
   
   
