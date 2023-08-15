@@ -27,7 +27,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img0.baidu.com/it/u=1133318621,210142231&fm=253&fmt=auto&app=120&f=JPEG?w=1043&h=575">
 <meta property="article:published_time" content="2023-08-11T04:02:00.000Z">
-<meta property="article:modified_time" content="2023-08-13T08:51:46.215Z">
+<meta property="article:modified_time" content="2023-08-15T07:43:31.238Z">
 <meta property="article:author" content="Rocky CHEN">
 <meta property="article:tag" content="Web3.0">
 <meta name="twitter:card" content="summary_large_image">
@@ -275,7 +275,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          32k words
+          35k words
         
       </span>
     
@@ -286,7 +286,7 @@
         
         
         
-          271 mins
+          295 mins
         
       </span>
     
@@ -705,13 +705,48 @@
 <li>列出已知SPL-Token的余额</li>
 <li>实时展示SPL-Token余额变化</li>
 </ul>
-<h3 id="1-创建账号"><a href="#1-创建账号" class="headerlink" title="1. 创建账号"></a>1. 创建账号</h3><p>我们复用前面的账号</p>
-<ul>
-<li>SOL账号： Czorr4y9oFvE3VdfCLVFuKDYxaNUG1iyQomR7kMZUuzi</li>
-<li>SPL-Token(Mint Account): 7vtXvye2ECB1T5Se8E1KebNfmV7t4VkaULDjf2v1xpA9</li>
-<li>Token Account: EZhhUANUMKsRhRMArczio1kLc9axefTUAh5xofGX35AK</li>
+<h3 id="1-创建账号"><a href="#1-创建账号" class="headerlink" title="1. 创建账号"></a>1. 创建账号</h3><ul>
+<li><strong>SOL账号：</strong> Czorr4y9oFvE3VdfCLVFuKDYxaNUG1iyQomR7kMZUuzi</li>
+<li><strong>SPL-Token (Mint Account):</strong> 7vtXvye2ECB1T5Se8E1KebNfmV7t4VkaULDjf2v1xpA9</li>
+<li><strong>Token Account:</strong> EZhhUANUMKsRhRMArczio1kLc9axefTUAh5xofGX35AK</li>
 </ul>
-<h3 id="2-订阅SOL余额变化"><a href="#2-订阅SOL余额变化" class="headerlink" title="2. 订阅SOL余额变化"></a>2. 订阅SOL余额变化</h3><p>这个其实已经在课上演示过了。详情可以查看视频录像以及教程中的”订阅Account变化”章节</p>
+<ol>
+<li>创建一个新账号:</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs solidity">solana-keygen new --force // 得到SOL账号公钥：Czorr4y9oFvE3VdfCLVFuKDYxaNUG1iyQomR7kMZUuzi<br></code></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>用 mint account 创建 Token</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs solidity">spl-token create-token<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs solidity">Creating token 7vtXvye2ECB1T5Se8E1KebNfmV7t4VkaULDjf2v1xpA9 under program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA<br><br>Address:  7vtXvye2ECB1T5Se8E1KebNfmV7t4VkaULDjf2v1xpA9 // 得到 SPL-Token (Mint Account), Token地址<br>Decimals:  9 // 精度: 9<br><br>Signature: 5QRdzn59ig3j3qjEazteDR2zoCLUWoCWdbFc7iQTd68esfdV9je3fE2We3Ms7NUGfBt6kapCj7oBAr1kbiTskSmz<br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>创建 Token Account</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs solidity">spl-token create-account 7vtXvye2ECB1T5Se8E1KebNfmV7t4VkaULDjf2v1xpA9<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs solidity">Creating account EZhhUANUMKsRhRMArczio1kLc9axefTUAh5xofGX35AK // 调用ATA合约，并创建ATA账号, Token Account.<br><br>Signature: 59yBhJzC2HDkF61AhgaXcvVGiw5CjdnNpFyxvCzbqQrCjGCVKotNvCMaRQooJkxmu6ypJ9P7AZDiKxYex7pvBZKq<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-订阅SOL余额变化"><a href="#2-订阅SOL余额变化" class="headerlink" title="2. 订阅SOL余额变化"></a>2. 订阅SOL余额变化</h3><p>这里的Account就是每个地址的Account元数据。主要变化的就是data部分和lamports部分。 比如我们要订阅我们的账号余额的变化。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs solidity">&#123;<br>        &quot;jsonrpc&quot;: &quot;2.0&quot;,<br>        &quot;id&quot;: 1,<br>        &quot;method&quot;: &quot;accountSubscribe&quot;,<br>        &quot;params&quot;: [<br>            &quot;CnjrCefFBHmWnKcwH5T8DFUQuVEmUJwfBL3Goqj6YhKw&quot;,<br>            &#123;<br>            &quot;encoding&quot;: &quot;jsonParsed&quot;,<br>            &quot;commitment&quot;: &quot;finalized&quot;<br>            &#125;<br>        ]<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<p>这里订阅对账号的变化的事件，我们通过wscat来模拟：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs solidity">wscat -c wss://api.devnet.solana.com<br>    Connected (press CTRL+C to quit)<br>    &gt; &#123;&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:1,&quot;method&quot;:&quot;accountSubscribe&quot;,&quot;params&quot;:[&quot;EZhhUANUMKsRhRMArczio1kLc9axefTUAh5xofGX35AK&quot;,&#123;&quot;encoding&quot;:&quot;jsonParsed&quot;,&quot;commitment&quot;:&quot;finalized&quot;&#125;]&#125;<br>    &lt; &#123;&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:3283925,&quot;id&quot;:1&#125;<br></code></pre></td></tr></table></figure>
+
+<p>然后我们在另外一个终端里面进行转账：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs solidity">solana transfer --allow-unfunded-recipient CZmVK1DymrSVWHiQCGXx6VG5zgHVrh5J1P514jHKRDxA 0.01<br></code></pre></td></tr></table></figure>
+
+<p>接着我们注意观察上面的wscat:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs solidity">Connected (press CTRL+C to quit)<br>    &gt; &#123;&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:1,&quot;method&quot;:&quot;accountSubscribe&quot;,&quot;params&quot;:[&quot;CnjrCefFBHmWnKcwH5T8DFUQuVEmUJwfBL3Goqj6YhKw&quot;,&#123;&quot;encoding&quot;:&quot;jsonParsed&quot;,&quot;commitment&quot;:&quot;finalized&quot;&#125;]&#125;<br>    &lt; &#123;&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;result&quot;:3283925,&quot;id&quot;:1&#125;<br>    &lt; &#123;&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;accountNotification&quot;,&quot;params&quot;:&#123;&quot;result&quot;:&#123;&quot;context&quot;:&#123;&quot;slot&quot;:209127027&#125;,&quot;value&quot;:&#123;&quot;lamports&quot;:989995000,&quot;data&quot;:[&quot;&quot;,&quot;base64&quot;],&quot;owner&quot;:&quot;11111111111111111111111111111111&quot;,&quot;executable&quot;:false,&quot;rentEpoch&quot;:0,&quot;space&quot;:0&#125;&#125;,&quot;subscription&quot;:3283925&#125;&#125;<br></code></pre></td></tr></table></figure>
+
+<p>会发现，一段时间后，也就是到达了 “finalized”状态后，就会将修改过后的Account信息推送过来：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs solidity">&#123;<br>        &quot;lamports&quot;: 989995000,<br>        &quot;data&quot;: [<br>            &quot;&quot;,<br>            &quot;base64&quot;<br>        ],<br>        &quot;owner&quot;: &quot;11111111111111111111111111111111&quot;,<br>        &quot;executable&quot;: false,<br>        &quot;rentEpoch&quot;: 0,<br>        &quot;space&quot;: 0<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<p>可以看到这里余额发生了变化</p>
 <h3 id="3-展示SPL-Token变化"><a href="#3-展示SPL-Token变化" class="headerlink" title="3. 展示SPL-Token变化"></a>3. 展示SPL-Token变化</h3><p>早期的钱包是通过官方的 <a target="_blank" rel="noopener" href="https://github.com/solana-labs/token-list">token-list</a> 来获得 已知的SPL-Token，现在则通过Metaplex的FT标准查询。除此之外还可以通过订阅Token合约管理的账户变化 来判断是否有Owner为自己的 Token Account被创建。</p>
 <p>这里我们假设第一种情况，钱包只维护知名token或者用户自己添加的Token，比如上面的 “7vtXvye2ECB1T5Se8E1KebNfmV7t4VkaULDjf2v1xpA9”</p>
 <p>我们首先获取这个SPL-Token下我们有多少 Token Account:</p>
