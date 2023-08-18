@@ -27,7 +27,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img0.baidu.com/it/u=1133318621,210142231&fm=253&fmt=auto&app=120&f=JPEG?w=1043&h=575">
 <meta property="article:published_time" content="2023-08-11T04:02:00.000Z">
-<meta property="article:modified_time" content="2023-08-17T07:02:24.326Z">
+<meta property="article:modified_time" content="2023-08-18T07:14:18.785Z">
 <meta property="article:author" content="Rocky CHEN">
 <meta property="article:tag" content="Web3.0">
 <meta name="twitter:card" content="summary_large_image">
@@ -279,7 +279,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          41k words
+          48k words
         
       </span>
     
@@ -290,7 +290,7 @@
         
         
         
-          345 mins
+          400 mins
         
       </span>
     
@@ -790,35 +790,133 @@
 
 
 
-<h1 id="03-与Solana合约交互"><a href="#03-与Solana合约交互" class="headerlink" title="03. 与Solana合约交互"></a><u>03. 与Solana合约交互</u></h1><h2 id="3-1-Solana的Web3-js"><a href="#3-1-Solana的Web3-js" class="headerlink" title="3.1 Solana的Web3.js"></a>3.1 Solana的Web3.js</h2><p>对于 ETH 的 <a target="_blank" rel="noopener" href="https://github.com/ethereum/web3.js/">web3.js</a> 是一个JavaScript API库，主要提供了通过 JavaScript 与 ETH 上合约进行交互。</p>
+<h1 id="03-与Solana合约交互"><a href="#03-与Solana合约交互" class="headerlink" title="03. 与Solana合约交互"></a><u>03. 与Solana合约交互</u></h1><h2 id="3-1-如何使用Solana的Web3-js"><a href="#3-1-如何使用Solana的Web3-js" class="headerlink" title="3.1 如何使用Solana的Web3.js"></a>3.1 如何使用Solana的Web3.js</h2><p>对于 ETH 的 <a target="_blank" rel="noopener" href="https://github.com/ethereum/web3.js/">web3.js</a> 是一个JavaScript API库，主要提供了通过 JavaScript 与 ETH 上合约进行交互。</p>
 <p>而 Solana 也提供了与 Solana 的 JSON RPC 接口交互的 <a target="_blank" rel="noopener" href="https://github.com/solana-labs/solana-web3.js">solana-web3.js</a> 。通过这个库，开发人员可以实现 <strong>在 dapp 中用 JavaScritp 和 Solana 上的 区块链(智能合约) 进行交互</strong>。Web3.js 库主要分为三部分：</p>
 <ul>
 <li>RPC 访问</li>
 <li>keypair 管理</li>
 <li>交易发送</li>
 </ul>
-<h3 id="安装Web3-js"><a href="#安装Web3-js" class="headerlink" title="安装Web3.js"></a>安装Web3.js</h3><p>首先，你需要在你的项目中安装Web3.js库。你可以使用npm进行安装：</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript">sudo <span class="hljs-built_in">npm</span> i<br><span class="hljs-built_in">npm</span> run start<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="1-安装Web3-js"><a href="#1-安装Web3-js" class="headerlink" title="1. 安装Web3.js"></a>1. 安装Web3.js</h3><p>首先，你需要在你的项目中安装Web3.js库。你可以使用npm进行安装：</p>
 <figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-built_in">npm</span> install @solana/web3.js<br></code></pre></td></tr></table></figure>
 
 
 
-<h3 id="Connection"><a href="#Connection" class="headerlink" title="Connection"></a>Connection</h3><p>这个js库给我们提供了哪些内容呢？</p>
+<h3 id="2-Connection"><a href="#2-Connection" class="headerlink" title="2. Connection"></a>2. Connection</h3><p>这个js库给我们提供了哪些内容呢？</p>
 <p>安装<code>solana/web3.js</code>后，可以使用它来连接到Solana的RPC服务：创建一个新的<code>Connection</code>对象，然后用它来调用RPC方法。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> url = <span class="hljs-string">&#x27;https://api.devnet.solana.com&#x27;</span>;<br>rpcConnection = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Connection</span>(url);<br></code></pre></td></tr></table></figure>
 
 <p>通过指定 RPC 的地址这样来创建。这个对象包含了所有的 RPC 方法：</p>
-<p><img src="https://www.solanazh.com/assets/images/rpc_method.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://www.solanazh.com/assets/images/rpc_method.png" srcset="/img/loading.gif" lazyload alt="所有的 RPC 方法"></p>
 <p>可以查看每个方法的文档，来查看使用方法。这里举几个简单的例子。比如获取当前区块高度。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs solidity">let latestBlockhash = await this.connection.getLatestBlockhash(&#x27;finalized&#x27;);<br>    console.log(&quot;   ✅ - Fetched latest blockhash. Last Valid Height:&quot;, latestBlockhash.lastValidBlockHeight);<br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> latestBlockhash = <span class="hljs-keyword">await</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">connection</span>.<span class="hljs-title function_">getLatestBlockhash</span>(<span class="hljs-string">&#x27;finalized&#x27;</span>);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;   ✅ - Fetched latest blockhash. Last Valid Height:&quot;</span>, latestBlockhash.<span class="hljs-property">lastValidBlockHeight</span>);<br></code></pre></td></tr></table></figure>
 
 <p>这里指定了区块状态为 finalized,在 console 中可以看到：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs solidity">✅ - Fetched latest blockhash. Last Valid Height: 175332530<br></code></pre></td></tr></table></figure>
 
 
 
-<h2 id="账号"><a href="#账号" class="headerlink" title="账号"></a>账号</h2><p>你可以使用<code>solana-web3.js</code>来创建一个新的账户。早期版本的<code>web3.js</code>提供了一个<code>Account</code>对象，但现在已经被<code>Keypair</code>对象所取代。</p>
-<p>你可以使用私钥来初始化<code>Keypair</code>：</p>
-<h2 id="3-2-与钱包交互"><a href="#3-2-与钱包交互" class="headerlink" title="3.2 与钱包交互"></a>3.2 与钱包交互</h2><h2 id="3-3-合约调用"><a href="#3-3-合约调用" class="headerlink" title="3.3 合约调用"></a>3.3 合约调用</h2><h2 id="3-4-课后练习"><a href="#3-4-课后练习" class="headerlink" title="3.4 课后练习"></a>3.4 课后练习</h2>
+<h3 id="3-账号"><a href="#3-账号" class="headerlink" title="3. 账号"></a>3. 账号</h3><p>你可以使用<code>solana-web3.js</code>来创建一个新的账户。早期版本的<code>web3.js</code>提供了一个<code>Account</code>对象，但现在已经被<code>Keypair</code>对象所取代。</p>
+<ol>
+<li><p>钱包本质上就是一个<code>Keypair</code>，一个私钥和公钥的组合，因此 <code>keypair</code> 可以用一段私钥来进行初始化：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-title function_">constructor</span>(<span class="hljs-params">keypair?: Ed25519Keypair</span>) <span class="hljs-comment">// 私钥初始化 keypair</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>通过命令行创建了私钥后，在文件”~&#x2F;.config&#x2F;solana&#x2F;id.json”中，没有加密的情况下可以直接取出来</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> secretKey = <span class="hljs-title class_">Uint8Array</span>.<span class="hljs-title function_">from</span>(<span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-string">&#x27;[24,xxx,119]&#x27;</span>)); <span class="hljs-comment">// demo 里把 id.json 里用数组表示的私钥来转换成二进制</span><br>    <span class="hljs-keyword">const</span> keypair = <span class="hljs-title class_">Keypair</span>.<span class="hljs-title function_">fromSecretKey</span>(secretKey);<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;address:&quot;</span>, keypair.<span class="hljs-property">publicKey</span>.<span class="hljs-title function_">toString</span>())<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>私钥 -&gt; 地址，可以看到：</p>
+ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-attr">address</span>: 5pWae6RxD3zrYzBmPTMYo1LZ5vef3vfWH6iV3s8n6ZRG<br></code></pre></td></tr></table></figure>
+<p> 和我们命令行中的地址是一样的。这里 publicKey 就是对应的账号地址，keypair 就是 Signer。</p>
+</li>
+</ol>
+<h3 id="4-发送交易"><a href="#4-发送交易" class="headerlink" title="4. 发送交易"></a>4. 发送交易</h3><p>在介绍 Solana 核心概念的时候，我们有介绍到 Instruction 和 Transaction 以及 Message。所以发送交易，就是构建 Instructions 数组，然后构造 Message，再放到 Transaction 里面，做签名并进行发送。</p>
+<p>如果是普通应用合约，需要自己封装 Instruction。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-comment">/**</span><br><span class="hljs-comment">    * Transaction Instruction class</span><br><span class="hljs-comment">    */</span><br>    <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">TransactionInstruction</span> &#123;<br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">        * Public keys to include in this transaction</span><br><span class="hljs-comment">        * Boolean represents whether this pubkey needs to sign the transaction</span><br><span class="hljs-comment">        */</span><br>        <span class="hljs-attr">keys</span>: <span class="hljs-title class_">Array</span>&lt;<span class="hljs-title class_">AccountMeta</span>&gt;;<br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">        * Program Id to execute</span><br><span class="hljs-comment">        */</span><br>        <span class="hljs-attr">programId</span>: <span class="hljs-title class_">PublicKey</span>;<br>        <span class="hljs-comment">/**</span><br><span class="hljs-comment">        * Program input</span><br><span class="hljs-comment">        */</span><br>        <span class="hljs-attr">data</span>: <span class="hljs-title class_">Buffer</span>;<br>        <span class="hljs-title function_">constructor</span>(<span class="hljs-params">opts: TransactionInstructionCtorFields</span>);<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<p>其中 programId 表示调用合约的地址。key 是合约中需要使用到的 Account， data 则是所有的输入序列化后的二进制。</p>
+<p>因为合约的入口是：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js">declare_process_instruction!(<br>        process_instruction,<br>        <span class="hljs-variable constant_">DEFAULT_COMPUTE_UNITS</span>,<br>        |invoke_context| &#123;<br>            <span class="hljs-keyword">let</span> transaction_context = &amp;invoke_context.<span class="hljs-property">transaction_context</span>;<br>            <span class="hljs-keyword">let</span> instruction_context = transaction_context.<span class="hljs-title function_">get_current_instruction_context</span>()?;<br>            <span class="hljs-keyword">let</span> instruction_data = instruction_context.<span class="hljs-title function_">get_instruction_data</span>();<br>            <span class="hljs-keyword">let</span> instruction = <span class="hljs-title function_">limited_deserialize</span>(instruction_data)?;<br></code></pre></td></tr></table></figure>
+
+<p>可以简化为：</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-keyword">fn</span> <span class="hljs-title function_">process_instruction</span>(<br>        program_id: &amp;Pubkey,<br>        accounts: &amp;[AccountInfo],<br>        instruction_data: &amp;[<span class="hljs-type">u8</span>],<br>    ) <span class="hljs-punctuation">-&gt;</span> ProgramResult &#123;<br></code></pre></td></tr></table></figure>
+
+<p>具体的方法是从 data 里面解析出来，然后再解析出来参数。</p>
+<p>而 Solana 的系统合约，或者说 Native Program。 Web3.js 已经为我们封装好了一些 Instruction。比如转账：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title class_">SystemProgram</span>.<span class="hljs-title function_">transfer</span>(&#123;<br>        <span class="hljs-attr">fromPubkey</span>:<span class="hljs-keyword">new</span> <span class="hljs-title class_">PublicKey</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">state</span>.<span class="hljs-property">publicKey</span>), <span class="hljs-comment">//this.publicKey,</span><br>        <span class="hljs-attr">toPubkey</span>: <span class="hljs-keyword">new</span> <span class="hljs-title class_">PublicKey</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">state</span>.<span class="hljs-property">toPublicKey</span>),<span class="hljs-comment">//destination,</span><br>        <span class="hljs-attr">lamports</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">state</span>.<span class="hljs-property">toCount</span>,<span class="hljs-comment">//amount,</span><br>      &#125;)<br></code></pre></td></tr></table></figure>
+
+<p>这里表示从 fromPubkey 地址转 lamports 的 SOL 到 toPubkey 的地址。他实际上会调用”11111111111111111111111111111111”合约的 transfer方法。该方法接受三个参数，其中 fromPubkey 需要是签名对象。</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-keyword">fn</span> <span class="hljs-title function_">transfer</span>(<br>        from_account_index: IndexOfAccount,<br>        to_account_index: IndexOfAccount,<br>        lamports: <span class="hljs-type">u64</span>,<br>        invoke_context: &amp;InvokeContext,<br>        transaction_context: &amp;TransactionContext,<br>        instruction_context: &amp;InstructionContext,<br>    ) <span class="hljs-punctuation">-&gt;</span> <span class="hljs-type">Result</span>&lt;(), InstructionError&gt; &#123;<br></code></pre></td></tr></table></figure>
+
+<p>因为转账只需要用到一个 Instruction，所以用这个 Instrcuton 构造 Message:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> messageV0 = <span class="hljs-keyword">new</span> <span class="hljs-title class_">TransactionMessage</span>(&#123;<br>      <span class="hljs-attr">payerKey</span>: <span class="hljs-variable language_">this</span>.<span class="hljs-property">keypair</span>.<span class="hljs-property">publicKey</span>,<br>      <span class="hljs-attr">recentBlockhash</span>: latestBlockhash.<span class="hljs-property">blockhash</span>,<br>      <span class="hljs-attr">instructions</span>: txInstructions<br>    &#125;).<span class="hljs-title function_">compileToV0Message</span>();<br></code></pre></td></tr></table></figure>
+
+<p>这里 instructions 是 Array<TransactionInstruction>一个数组。</p>
+<p>payerKey 则是发送这个消息的 gas 付费者，其也需要提供签名。 recentBlockhash 通过我们前面的 RPC 可以获取到。这里 recentBlockhash 不能隔的太远。这样就限制了消息的签名时间。最后调用 compileToV0Message 构造 Message 对象。</p>
+<p>有了 Message，还有构造 VersionedTransaction， 早期的 Transaction 已经废弃。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">VersionedTransaction</span> &#123;<br>        <span class="hljs-attr">signatures</span>: <span class="hljs-title class_">Array</span>&lt;<span class="hljs-title class_">Uint8Array</span>&gt;;<br>        <span class="hljs-attr">message</span>: <span class="hljs-title class_">VersionedMessage</span>;<br>        <span class="hljs-keyword">get</span> <span class="hljs-title function_">version</span>(): <span class="hljs-title class_">TransactionVersion</span>;<br>        <span class="hljs-title function_">constructor</span>(<span class="hljs-params">message: VersionedMessage, signatures?: <span class="hljs-built_in">Array</span>&lt;<span class="hljs-built_in">Uint8Array</span>&gt;</span>);<br>        <span class="hljs-title function_">serialize</span>(): <span class="hljs-title class_">Uint8Array</span>;<br>        <span class="hljs-keyword">static</span> <span class="hljs-title function_">deserialize</span>(<span class="hljs-attr">serializedTransaction</span>: <span class="hljs-title class_">Uint8Array</span>): <span class="hljs-title class_">VersionedTransaction</span>;<br>        <span class="hljs-title function_">sign</span>(<span class="hljs-attr">signers</span>: <span class="hljs-title class_">Array</span>&lt;<span class="hljs-title class_">Signer</span>&gt;): <span class="hljs-keyword">void</span>;<br>        <span class="hljs-title function_">addSignature</span>(<span class="hljs-attr">publicKey</span>: <span class="hljs-title class_">PublicKey</span>, <span class="hljs-attr">signature</span>: <span class="hljs-title class_">Uint8Array</span>): <span class="hljs-keyword">void</span>;<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<p>新的 VersionedTransaction 对象，通过传入 VersionedMessage 来构造：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs solidity">constructor(message: VersionedMessage, signatures?: Array&lt;Uint8Array&gt;);<br></code></pre></td></tr></table></figure>
+
+<p>这里我们上面构造的 V0 就是 VersionedMessage 的对象。</p>
+<p>这里可以传入 signatures,比如通过硬件钱包签名的内容。或者不传入也可以，调用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs solidity">sign(signers: Array&lt;Signer&gt;): void;<br></code></pre></td></tr></table></figure>
+
+<p>传入我们上面的 keypair。也可以对 VersionedTransaction 进行签名。</p>
+<p>构造结束后，通过 connection 的 sendTransaction 方法发送即可：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs solidity">sendTransaction(transaction: VersionedTransaction, options?: SendOptions): Promise&lt;TransactionSignature&gt;;<br></code></pre></td></tr></table></figure>
+
+<p>这里返回的 TransactionSignature 即为，交易的 hash，可以通过浏览器进行查询。</p>
+<h2 id="3-2-通过-WalletAdatper-与钱包交互"><a href="#3-2-通过-WalletAdatper-与钱包交互" class="headerlink" title="3.2 通过 WalletAdatper 与钱包交互"></a>3.2 通过 WalletAdatper 与钱包交互</h2><p>为了给 DApp 提供一套统一的兼容钱包的接口。Solana 设计了一套 Wallet Adapter。 Solana 要求，钱包方需要按照该套接口设计，提供实现。这样 DApp 使用方，只需要按照一套接口，就可以轻松支持多个钱包。接口包含了</p>
+<ul>
+<li>网络选择;</li>
+<li>账号选择;</li>
+<li>账号签名等</li>
+</ul>
+<p>除了统一的接口，Adapter 还设计了一套基础 UI，其包括了弹出钱包的选择列表，以及链接钱包后的的账号地址显示。</p>
+<img src="https://www.solanazh.com/assets/images/wallets_select_ui.png" srcset="/img/loading.gif" lazyload style="zoom:40%;" />
+
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>在你的工程总安装 Wallet_Adapter 依赖：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs solidity">npm install --save \<br>    @solana/wallet-adapter-base \<br>    @solana/wallet-adapter-react \<br>    @solana/wallet-adapter-react-ui \<br>    @solana/wallet-adapter-wallets \<br>    @solana/web3.js<br></code></pre></td></tr></table></figure>
+
+<p>这里我们还会用到一些 web3.js 里面的变量，所以也将其 install 上。</p>
+<p>在使用地方先 import 相关 SDK</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">ConnectionProvider</span>, <span class="hljs-title class_">WalletProvider</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@solana/wallet-adapter-react&#x27;</span>;<br>    <span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">WalletAdapterNetwork</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@solana/wallet-adapter-base&#x27;</span>;<br><br>    <span class="hljs-keyword">import</span> &#123;<br>        <span class="hljs-title class_">WalletModalProvider</span>,<br>        <span class="hljs-title class_">WalletDisconnectButton</span>,<br>        <span class="hljs-title class_">WalletMultiButton</span><br>    &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@solana/wallet-adapter-react-ui&#x27;</span>;<br>    <span class="hljs-keyword">import</span> &#123; clusterApiUrl &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@solana/web3.js&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
+<p>这里因为我们的示例 demo 是 react 的，所以使用了 react-ui，Wallet-adapter 同时也提供了 Material UI 和 Ant Design 的组件。</p>
+<p>已经实现了 Adapter 的钱包参见<a target="_blank" rel="noopener" href="https://github.com/solana-labs/wallet-adapter/tree/master/packages/wallets">列表</a>。</p>
+<p>这里我们使用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123;<span class="hljs-title class_">SolongWalletAdapter</span>&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@solana/wallet-adapter-solong&#x27;</span><br>    <span class="hljs-keyword">import</span> &#123;<span class="hljs-title class_">PhantomWalletAdapter</span>&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@solana/wallet-adapter-phantom&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
+<h3 id="链接钱包"><a href="#链接钱包" class="headerlink" title="链接钱包"></a>链接钱包</h3><p>链接钱包的步骤，是在用户界面设置一个”Connect”的按钮，当点击时，弹出一个钱包选择 list 界面。可使用钱包，通过数组参数参数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-variable language_">this</span>.<span class="hljs-property">network</span> = <span class="hljs-title class_">WalletAdapterNetwork</span>.<span class="hljs-property">Testnet</span>;<br><br>    <span class="hljs-comment">// You can also provide a custom RPC endpoint.</span><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">endpoint</span> =  <span class="hljs-title function_">clusterApiUrl</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">network</span>);<br><br>    <span class="hljs-variable language_">this</span>.<span class="hljs-property">wallets</span> =[<br>        <span class="hljs-keyword">new</span> <span class="hljs-title class_">SolongWalletAdapter</span>(),<br>        <span class="hljs-keyword">new</span> <span class="hljs-title class_">PhantomWalletAdapter</span>(),<br>    ];<br></code></pre></td></tr></table></figure>
+
+<p>然后再弹出 UI 将钱包罗列出来</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs solidity">&lt;ConnectionProvider endpoint=&#123;endpoint&#125;&gt;<br>            &lt;WalletProvider wallets=&#123;wallets&#125; autoConnect&gt;<br>                &lt;WalletModalProvider&gt;<br>                    &lt;WalletMultiButton /&gt;<br>                    &lt;WalletDisconnectButton /&gt;<br>                &lt;/WalletModalProvider&gt;<br>            &lt;/WalletProvider&gt;<br>        &lt;/ConnectionProvider&gt;<br></code></pre></td></tr></table></figure>
+
+<p>这里主要使用了 ConnectionProvider 来指定相应的网络。endpoint 参数为使用的 RPC 环境。通过 WalletProvider 来选择实现了 Adapter 的插件钱包，示例中我们设置了 Phantom。</p>
+<p>最后在 WalletModalProvider 通过相应的按钮触发对钱包的选择。也就是我们上面传递的 Solong 和 Phantom。</p>
+<p>当用户点击 WalletMultiButton 的时候，会自动弹出钱包选择界面。选择钱包后，会弹出钱包的链接界面。当用户点击链接后，这里的 ModalProvider 会得到选择的账号的信息，并将地址显示在按钮上。</p>
+<p>当点击 WalletDisconnectButton 后，会断开链接。</p>
+<h2 id="发送请求"><a href="#发送请求" class="headerlink" title="发送请求"></a>发送请求</h2><p>前面介绍了 web3.js 的使用，在发送请求的时候，我们需要用账号的私钥对交易内容做签名。那么在使用钱包的情况下该如何操作呢？</p>
+<p>首先 import 相关库</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">WalletNotConnectedError</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@solana/wallet-adapter-base&#x27;</span>;<br>    <span class="hljs-keyword">import</span> &#123; useConnection, useWallet &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@solana/wallet-adapter-react&#x27;</span>;<br>    <span class="hljs-keyword">import</span> &#123; <span class="hljs-title class_">Keypair</span>, <span class="hljs-title class_">SystemProgram</span>, <span class="hljs-title class_">Transaction</span> &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@solana/web3.js&#x27;</span>;<br>    <span class="hljs-keyword">import</span> <span class="hljs-title class_">React</span>, &#123; <span class="hljs-variable constant_">FC</span>, useCallback &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
+<p>然后先取出链接和公钥：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> &#123; connection &#125; = <span class="hljs-title function_">useConnection</span>();<br>    <span class="hljs-keyword">const</span> &#123; publicKey, sendTransaction &#125; = <span class="hljs-title function_">useWallet</span>();<br></code></pre></td></tr></table></figure>
+
+<p>这里通过 useConnection 可以得到我们前面钱包里面选择的 RPC 链接，useWallet 返回的结果为选中的钱包的地址，以及使用该钱包发送交易的方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> &#123;<br>            <span class="hljs-attr">context</span>: &#123; <span class="hljs-attr">slot</span>: minContextSlot &#125;,<br>            <span class="hljs-attr">value</span>: &#123; blockhash, lastValidBlockHeight &#125;<br>        &#125; = <span class="hljs-keyword">await</span> connection.<span class="hljs-title function_">getLatestBlockhashAndContext</span>();<br><br>        <span class="hljs-keyword">const</span> signature = <span class="hljs-keyword">await</span> <span class="hljs-title function_">sendTransaction</span>(transaction, connection, &#123; minContextSlot &#125;);<br></code></pre></td></tr></table></figure>
+
+<p>通过 connection.getLatestBlockhashAndContext 可以得到 minContextSlot 信息，然后再调用 sendTransaction 方法，就可以出发钱包弹出 UI，并提示用户确认，当用户点击确认后，既完成请求的发送。</p>
+<h2 id="切换账号"><a href="#切换账号" class="headerlink" title="切换账号"></a>切换账号</h2><p>如果用户需要切换账号，那么通过 UI 提供的 Disconnect 入口，先取消当前账号的链接。然后再通过链接界面，选择其他的钱包账号。所以切换账号就是先断开，再重新链接的过程。</p>
+<p>取消链接，只需要删除当前记录的用户即刻。</p>
+<p>而切换账号则可以直接在此使用”连接” 的流程。</p>
+<h2 id="3-3-合约调用-–-真实的合约交互"><a href="#3-3-合约调用-–-真实的合约交互" class="headerlink" title="3.3 合约调用 – 真实的合约交互"></a>3.3 合约调用 – 真实的合约交互</h2><h2 id="3-4-课后练习"><a href="#3-4-课后练习" class="headerlink" title="3.4 课后练习"></a>3.4 课后练习</h2>
                 
               </div>
             
