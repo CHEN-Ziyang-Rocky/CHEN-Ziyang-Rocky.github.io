@@ -27,7 +27,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://img0.baidu.com/it/u=1133318621,210142231&fm=253&fmt=auto&app=120&f=JPEG?w=1043&h=575">
 <meta property="article:published_time" content="2023-08-11T04:02:00.000Z">
-<meta property="article:modified_time" content="2023-08-18T07:14:18.785Z">
+<meta property="article:modified_time" content="2023-08-25T07:30:50.833Z">
 <meta property="article:author" content="Rocky CHEN">
 <meta property="article:tag" content="Web3.0">
 <meta name="twitter:card" content="summary_large_image">
@@ -279,7 +279,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          48k words
+          50k words
         
       </span>
     
@@ -290,7 +290,7 @@
         
         
         
-          400 mins
+          417 mins
         
       </span>
     
@@ -916,7 +916,55 @@
 <h2 id="切换账号"><a href="#切换账号" class="headerlink" title="切换账号"></a>切换账号</h2><p>如果用户需要切换账号，那么通过 UI 提供的 Disconnect 入口，先取消当前账号的链接。然后再通过链接界面，选择其他的钱包账号。所以切换账号就是先断开，再重新链接的过程。</p>
 <p>取消链接，只需要删除当前记录的用户即刻。</p>
 <p>而切换账号则可以直接在此使用”连接” 的流程。</p>
-<h2 id="3-3-合约调用-–-真实的合约交互"><a href="#3-3-合约调用-–-真实的合约交互" class="headerlink" title="3.3 合约调用 – 真实的合约交互"></a>3.3 合约调用 – 真实的合约交互</h2><h2 id="3-4-课后练习"><a href="#3-4-课后练习" class="headerlink" title="3.4 课后练习"></a>3.4 课后练习</h2>
+<h2 id="3-3-合约调用-–-真实的合约交互"><a href="#3-3-合约调用-–-真实的合约交互" class="headerlink" title="3.3 合约调用 – 真实的合约交互"></a>3.3 合约调用 – 真实的合约交互</h2><p>在前面的例子中，我们通过 web3.js 提供的 SystemProgram 来帮助我们实现了转账的功能。</p>
+<p>但是对于一个陌生的合约，我们要怎么来发起调用请求呢？</p>
+<h3 id="合约的入口"><a href="#合约的入口" class="headerlink" title="合约的入口"></a>合约的入口</h3><p>这里我们以 SPL Token 合约来举例。SPL Token 合约类似 web3.js 一样，其实已经封装好了一套 JS 库给我们来直接使用。这里我们不使用库，而以一个前端的身份，来看这样的一个合约，我们要怎么来交互。</p>
+<p>我们以 transfer 函数作为例子。</p>
+<p>首先要理解合约的作用和参数，这个可以跟合约开发去沟通。比如我们从注释了解到 transfer 为</p>
+<h2 id="3-4-课后练习"><a href="#3-4-课后练习" class="headerlink" title="3.4 课后练习"></a>3.4 课后练习</h2><p>实现一个 DApp 页面，实现代币创建，并按白名单发送空投</p>
+<blockquote>
+<p>提示：</p>
+<ol>
+<li>通过与 Token 合约交互，创建代币</li>
+<li>通过与 Token 合约交互，给白名单中的地址，发送 SPL Token 代币</li>
+<li>建议使用 SPL-Token 提供的库来构建 instruction</li>
+</ol>
+</blockquote>
+<h3 id="1-创建代币"><a href="#1-创建代币" class="headerlink" title="1. 创建代币"></a>1. 创建代币</h3><p>首先要构造一个 MintAccount:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs solidity">mintKeypair = Keypair.generate();<br></code></pre></td></tr></table></figure>
+
+<p>然后创建一个创建这个 MintAccount 的指令，我们借助系统指令库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs solidity">SystemProgram.createAccount(&#123;<br>        fromPubkey: publicKey,<br>        newAccountPubkey: mintKeypair.publicKey,<br>        space: MINT_SIZE,<br>        lamports:lamports,<br>        programId: TOKEN_PROGRAM_ID,<br>      &#125;),<br></code></pre></td></tr></table></figure>
+
+<p>这里 from 是付费人，new 是要创建的地址，space 是 data 的大小，因为我们要放 MintAccount 其为 spl-token 库里的定义</p>
+<p>lamports 我们通过 库提供的const lamports &#x3D; await getMinimumBalanceForRentExemptMint(connection);来获得一个 Account 对应这个大小的存储空间的最小的 rent 花费。</p>
+<p>接着创建 创建 token 的指令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs solidity">createInitializeMint2Instruction(mintKeypair.publicKey,<br>        9,<br>        publicKey,<br>        publicKey,<br>        TOKEN_PROGRAM_ID)<br></code></pre></td></tr></table></figure>
+
+<p>这里依次是创建的 MintAccount,精度，mintAuthority，freezeAuthority 以及 Token 合约地址。</p>
+<p>最后就是按照我们前面课程中的方式构造交易并发送。</p>
+<p>这里要注意，因为我们创建了新的 MintAccount，其内容修改需要签名，因此在发送交易的时候，带上：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs solidity">const signature = await sendTransaction(trx, connection, &#123;<br>      minContextSlot,<br>      signers:[mintKeypair],<br>    &#125;);<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-Mint-Token"><a href="#2-Mint-Token" class="headerlink" title="2. Mint Token"></a>2. Mint Token</h3><p>要 mint token，先要生成 ata 账号地址，spl token 的库里面有函数。</p>
+<p>Copy</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs solidity">ataAccount = await getAssociatedTokenAddressSync(<br>      mintKeypair.publicKey,<br>      owner,<br>      false,<br>      TOKEN_PROGRAM_ID,<br>      ASSOCIATED_TOKEN_PROGRAM_ID<br>    );<br></code></pre></td></tr></table></figure>
+
+<p>依次传入 MintAccount，为谁创建，后三个参数固定这样传即可。</p>
+<p>然后判断这个 account 是否存在，可以用我们前面 rpc 的 getaccount,这里库也封装了函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs solidity">await getAccount(connection, ataAccount);<br></code></pre></td></tr></table></figure>
+
+<p>没有的时候，会抛异常，我们要创建这个 ATA 账号</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs solidity">txInstructions.push(<br>          createAssociatedTokenAccountInstruction(<br>              publicKey,<br>              ataAccount,<br>              owner,<br>              mintKeypair.publicKey,<br>              TOKEN_PROGRAM_ID,<br>              ASSOCIATED_TOKEN_PROGRAM_ID<br>          )<br>      );<br></code></pre></td></tr></table></figure>
+
+<p>调用库里的 createAssociatedTokenAccountInstruction 创建指令，依次传入付费的人，上面的 ata 账号，为谁创建以及 MintAccount。</p>
+<p>如果存在则跳过</p>
+<p>最后执行 Mint:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs solidity">txInstructions.push(<br>      createMintToInstruction(<br>        mintKeypair.publicKey,<br>        ataAccount,<br>        publicKey,<br>        BigInt(toCount)<br>      )<br>    );<br></code></pre></td></tr></table></figure>
+
+<p>调用库函数 createMintToInstruction 传入 MintAccount，ata 账号以及 MintAuthority，因为只有他才有权限 mint，和数量。</p>
+<p>然后就是跟前面一样，构造交易并发送。注意这次没有额外的 singer 要求了。</p>
+
                 
               </div>
             
