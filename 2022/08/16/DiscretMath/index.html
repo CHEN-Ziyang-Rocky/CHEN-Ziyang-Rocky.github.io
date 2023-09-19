@@ -1,0 +1,1246 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://s1.ax1x.com/2023/08/11/pPn4DER.jpg">
+  <link rel="icon" href="https://s1.ax1x.com/2023/08/11/pPn4DER.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#252626">
+  <meta name="author" content="Rocky CHEN">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Made by Ziyang CHEN, Rocky, 陈子阳  01. Introduction公理 (Axiom): 假设为真实的 statement (eg. 0 是自然数) 定理 (Theorem), 引理 (Lemma), 推论 (Corollary), 定律 (Law): 通过使用 axioms 或 proven theorems 证明为正确的 statement. (eg. 对于任意">
+<meta property="og:type" content="article">
+<meta property="og:title" content="COMP2012 Discrete Mathematics">
+<meta property="og:url" content="http://example.com/2022/08/16/DiscretMath/index.html">
+<meta property="og:site_name" content="Rocky Web">
+<meta property="og:description" content="Made by Ziyang CHEN, Rocky, 陈子阳  01. Introduction公理 (Axiom): 假设为真实的 statement (eg. 0 是自然数) 定理 (Theorem), 引理 (Lemma), 推论 (Corollary), 定律 (Law): 通过使用 axioms 或 proven theorems 证明为正确的 statement. (eg. 对于任意">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/CHEN-Ziyang-Rocky/Image/main/Discrete%20Mathematics%20and%20Its%20Applications%20Kennet.png">
+<meta property="article:published_time" content="2022-08-15T16:50:43.000Z">
+<meta property="article:modified_time" content="2023-09-19T01:57:17.665Z">
+<meta property="article:author" content="Rocky CHEN">
+<meta property="article:tag" content="Discrete Mathematics">
+<meta property="article:tag" content="Notes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/CHEN-Ziyang-Rocky/Image/main/Discrete%20Mathematics%20and%20Its%20Applications%20Kennet.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>COMP2012 Discrete Mathematics - Rocky Web</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[],"cursor_effect":"fireworks"},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":true,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Rocky Blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>主页 | Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-books"></i>
+                <span>目录 | Contents</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-friends"></i>
+                <span>伙伴 | Friends</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于 | About</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-stack-overflow-fill"></i>
+                <span>更多 | More</span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>博客 | Blog</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/">
+                    <i class="iconfont icon-tags-fill"></i>
+                    <span>标签 | Tag</span>
+                  </a>
+                
+              </div>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://raw.githubusercontent.com/CHEN-Ziyang-Rocky/Image/main/Discrete%20Mathematics%20and%20Its%20Applications%20Kennet.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.2)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="COMP2012 Discrete Mathematics"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Rocky CHEN
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-08-16 00:50" pubdate>
+          Tuesday, August 16th 2022, 12:50 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          10k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          84 mins
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> times
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">COMP2012 Discrete Mathematics</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><em><strong>Made by Ziyang CHEN, Rocky, 陈子阳</strong></em></p>
+<hr>
+<h1 id="01-Introduction"><a href="#01-Introduction" class="headerlink" title="01. Introduction"></a><u>01. Introduction</u></h1><p><strong>公理 (Axiom)</strong>: 假设为真实的 statement (eg. 0 是自然数)</p>
+<p><strong>定理 (Theorem), 引理 (Lemma), 推论 (Corollary), 定律 (Law):</strong> 通过使用 axioms 或 proven theorems 证明为正确的 statement. (eg. 对于任意两个 natural numbers x, y: x + y &#x3D; y + x) </p>
+<p><strong>猜想 (Conjecture)</strong>: 尚未被证明属实的 statement. (eg. 对于任何大于 5 的偶数 x，存在两个prime number y, z 使得 x &#x3D; y + z，我们可以针对有限的情况进行验证（6、8、10、…、1000000）但是所有其他情况又如何呢？)</p>
+<h1 id="02-Logic-and-Proofs"><a href="#02-Logic-and-Proofs" class="headerlink" title="02. Logic and Proofs"></a><u>02. Logic and Proofs</u></h1><h2 id="2-1-命题逻辑-Proposition-logic"><a href="#2-1-命题逻辑-Proposition-logic" class="headerlink" title="2.1 命题逻辑 (Proposition logic)"></a>2.1 命题逻辑 (Proposition logic)</h2><h3 id="1-Proposition"><a href="#1-Proposition" class="headerlink" title="1. Proposition"></a>1. Proposition</h3><p><strong>命题 (proposition):</strong> 是一个 <strong>陈述句 (sentence&#x2F;statement)</strong> 它或真或假，但不能既真又假 (<font color=red><strong>True (1)</strong></font> or <font color=Blue><strong>False (0)</strong></font>, but not both).<br>即：命题是能够判断真假的陈述句。</p>
+<p><strong>命题变量 (propositional variable):</strong> 表示 <strong>命题 (proposition)</strong> 的变量 (<em>p, q, r, s</em>…)</p>
+<p>✅ 下面的陈述句均为命题 (真命题用 <strong>T</strong> 表示, 假命题用 <strong>F</strong>  表示)：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs py">(F)月亮是绿色奶酪做的<br>(F)南京是安徽省的省会<br>(T)<span class="hljs-number">1</span> + <span class="hljs-number">0</span> = <span class="hljs-number">1</span><br>(F)<span class="hljs-number">0</span> + <span class="hljs-number">0</span> = <span class="hljs-number">2</span><br>(T)别的星球有生物<br></code></pre></td></tr></table></figure>
+
+<p>❌ 下面的语句均不是命题：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs py">几点了?			<span class="hljs-comment"># 不是陈述句</span><br>仔细读这个		<span class="hljs-comment"># 不是陈述句</span><br>我正在说谎		<span class="hljs-comment"># 这是陈述句，但是看不出真假</span><br>x + <span class="hljs-number">1</span> = <span class="hljs-number">2</span>		<span class="hljs-comment"># 既不为真, 也不为假。但如果我们给他的变量赋值, 那么可以变成命题</span><br>x + y = z		<span class="hljs-comment"># 既不为真, 也不为假。但如果我们给他的变量赋值, 那么可以变成命题</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-Compound-proposition"><a href="#2-Compound-proposition" class="headerlink" title="2. Compound proposition"></a>2. Compound proposition</h3><p><strong>复合命题 (Compound proposition):</strong> <strong>逻辑运算符 (Logical operators)</strong> 和变量组合的命题<br>$$<br>\begin{aligned}<br>\bf Logical\ operators&amp;\bf : \ \neg\ , \wedge ,\vee ,\oplus ,\rightarrow ,↔ \<br>\bf propositional\ variable&amp;\bf : p, q, r, s\\<br>\bf Negation(\neg)&amp;\bf : \neg\ p\ &#x3D;not\ p\<br>\bf Conjunction(\wedge)&amp;\bf : p\wedge q\ &#x3D;p\ and\ q\ (两个都为True才是True, 以False主导)\<br>\bf Disjunction(\vee)&amp;\bf : p\vee q\ &#x3D;p\ or\ q\ (两个都为False才是False, 以True主导) \<br>\bf Exclusive(\oplus)&amp;\bf : p \oplus q\ &#x3D;p\ xor\ q\ (相同为假,不同为真,可以用是否是异性恋判断)\<br>\bf Implication&#x2F;Conditional(\rightarrow)&amp;\bf : p\rightarrow q\ &#x3D;if\ p, then\ q\ (前置T,命题看后置)(前置F,命题直接T)\<br>\bf Biconditional(↔)&amp;\bf : p ↔ q &#x3D; p\ if\ and\ only\ q\ (相同为真,不同为假,可以用是否是同性恋判断)<br>\end{aligned}<br>$$</p>
+<table>
+<thead>
+<tr>
+<th>p</th>
+<th>q</th>
+<th>&amp;not; p</th>
+<th>p &amp;and; q</th>
+<th>p &amp;or; q</th>
+<th>p &amp;oplus; q</th>
+<th>p &amp;rarr; q (Contrapositive)</th>
+<th>p &amp;harr; q (Biconditional)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><font color=red><strong>T</strong></font></td>
+<td><font color=red><strong>T</strong></font></td>
+<td><font color=blue><strong>F</strong></font></td>
+<td><font color=red><strong>T</strong></font></td>
+<td><font color=red><strong>T</strong></font></td>
+<td><font color=blue><strong>F</strong></font></td>
+<td><font color=red><strong>T</strong></font> (前置&#x3D;T, 后置&#x3D;T, 命题&#x3D;T)</td>
+<td><font color=red><strong>T</strong></font></td>
+</tr>
+<tr>
+<td><font color=red><strong>T</strong></font></td>
+<td><font color=blue><strong>F</strong></font></td>
+<td></td>
+<td><font color=blue><strong>F</strong></font></td>
+<td><font color=red><strong>T</strong></font></td>
+<td><font color=red><strong>T</strong></font></td>
+<td><font color=blue><strong>F</strong></font> (前置&#x3D;T, 后置&#x3D;F, 命题&#x3D;F)</td>
+<td><font color=blue><strong>F</strong></font></td>
+</tr>
+<tr>
+<td><font color=blue><strong>F</strong></font></td>
+<td><font color=red><strong>T</strong></font></td>
+<td><font color=red><strong>T</strong></font></td>
+<td><font color=blue><strong>F</strong></font></td>
+<td><font color=red><strong>T</strong></font></td>
+<td><font color=red><strong>T</strong></font></td>
+<td><font color=red><strong>T</strong></font> (前置&#x3D;F, 命题&#x3D;T)</td>
+<td><font color=blue><strong>F</strong></font></td>
+</tr>
+<tr>
+<td><font color=blue><strong>F</strong></font></td>
+<td><font color=blue><strong>F</strong></font></td>
+<td></td>
+<td><font color=blue><strong>F</strong></font></td>
+<td><font color=blue><strong>F</strong></font></td>
+<td><font color=blue><strong>F</strong></font></td>
+<td><font color=red><strong>T</strong></font> (前置&#x3D;F, 命题&#x3D;T)</td>
+<td><font color=red><strong>T</strong></font></td>
+</tr>
+</tbody></table>
+<h4 id="Contrapositive"><a href="#Contrapositive" class="headerlink" title="Contrapositive"></a>Contrapositive</h4><p><strong>p(下雨) &amp;rarr; q(我不进城)</strong> &#x3D; 如果下雨，我就不进城。由条件语句 <strong>p → q</strong> 可以构成一些新的条件语句：</p>
+<ul>
+<li><strong>p → q</strong> 的逆命题是  <strong>q &amp;rarr; p</strong> &#x3D; 如果我不进城，那就会下雨</li>
+<li><strong>p &amp;rarr; q</strong> 的 <strong>逆否命题 (contrapositive)</strong> 是  <strong>&amp;not;q &amp;rarr;  &amp;not;p</strong> &#x3D; 如果我不进城，那就不会下雨 (在所有情况下，他们具有相同的真值)</li>
+</ul>
+<h4 id="Biconditional"><a href="#Biconditional" class="headerlink" title="Biconditional"></a>Biconditional</h4><p>p &amp;harr; q 表示 **双条件语句(Biconditional)**，称作 <strong>“p 当且仅当 q (p if and only q)”</strong>. This statement is equivalent to: <strong>(p &amp;rarr; q) &amp;and; (p &amp;rarr; q)</strong></p>
+<p>如果 p 表示 “我在家” ， q 表示 “天在下雨”。则 p &amp;harr; q 表示 “我在家当且仅当天在下雨” 。</p>
+<h3 id="3-Equivalence"><a href="#3-Equivalence" class="headerlink" title="3. Equivalence"></a>3. Equivalence</h3><blockquote>
+<p>我们先用可能的真值对复合命题进行分类 (Proposition classification):</p>
+<ul>
+<li><font color=red><strong>永真式 (Tautology):</strong></font> 一个真值永远是真的命题 (eg. <strong>p &amp;or; &amp;not;p</strong> 总是<font color=red><strong>真</strong></font>的，所以它是<strong>永真式: p &amp;or; &amp;not;p &amp;equiv; T</strong>)</li>
+<li><font color=blue><strong>矛盾式 (Contradiction):</strong></font>  一个真值永远为假的命題 (eg. <strong>p &amp;and; &amp;not;p</strong> 总是<font color=blue><strong>假</strong></font>的，所以它是<strong>矛盾式: p &amp;and; &amp;not;p &amp;equiv; T</strong>)</li>
+</ul>
+</blockquote>
+<p>如果 <strong>p → q</strong> 是 **永真式 (Tautology)**，則复合命題 p 和 q 称为是逻辑等价，可以用 <strong>“p &amp;equiv; q”</strong> 和 <strong>“p &amp;harr; q”</strong> 代表。</p>
+<h4 id="De-Morgan’s-Laws"><a href="#De-Morgan’s-Laws" class="headerlink" title="De Morgan’s Laws"></a>De Morgan’s Laws</h4><p>$$<br>\bf \neg ( p \wedge q ) \equiv \neg p \vee \neg q \<br>\bf \neg ( p \vee q ) \equiv \neg p \wedge \neg q<br>$$</p>
+<h3 id="4-Boolean-algebra"><a href="#4-Boolean-algebra" class="headerlink" title="4. Boolean algebra"></a>4. Boolean algebra</h3><p><strong>Logic values (true&#x2F;false)</strong> 和 <strong>logical operators</strong> 可以用 <strong>Boolean algebra</strong> 表示为：</p>
+<table>
+<thead>
+<tr>
+<th>Logic</th>
+<th>Boolean algebra</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><font color=red><strong>True (T)</strong></font></td>
+<td><font color=red><strong>0</strong></font></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><font color=blue><strong>False (F)</strong></font></td>
+<td><font color=blue><strong>1</strong></font></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>&amp;not; p</td>
+<td>p̅</td>
+<td>The complement:</td>
+<td>0̅ &#x3D; 1</td>
+<td>1̅ &#x3D; 0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>p &amp;and; q</td>
+<td>p · q</td>
+<td>Boolean product:</td>
+<td>0 + 0 &#x3D; 0</td>
+<td>0 + 1 &#x3D; 1</td>
+<td>1 + 0  &#x3D; 1</td>
+<td>1 + 1 &#x3D; 1</td>
+</tr>
+<tr>
+<td>p &amp;or; q</td>
+<td>p + q</td>
+<td>Boolean sum:</td>
+<td>0 · 0 &#x3D; 0</td>
+<td>0 · 1 &#x3D; 0</td>
+<td>1 · 0 &#x3D; 0</td>
+<td>1 · 1 &#x3D; 1</td>
+</tr>
+</tbody></table>
+<h2 id="2-2-Predicates-and-quantifiers"><a href="#2-2-Predicates-and-quantifiers" class="headerlink" title="2.2 Predicates and quantifiers"></a>2.2 Predicates and quantifiers</h2><h3 id="propositional-function-P-x"><a href="#propositional-function-P-x" class="headerlink" title="propositional function P(x)"></a>propositional function <em>P</em>(<em>x</em>)</h3><blockquote>
+<p>**变量 (variable): **x,y,z<br>**谓词 (predicate): **P(x),M(x)</p>
+</blockquote>
+<ol>
+<li><p><em>P</em>(<em>x</em>) &#x3D; <em>x</em> is less than 5</p>
+<ul>
+<li><strong>“x”</strong> is an integer <font color=blue><strong>variable</strong></font>, <strong>“is less than 5”</strong> is a <font color=red><strong>谓语 (predicate)</strong></font></li>
+<li><strong><em>P</em>(1)</strong> is true; <strong><em>P</em>(5)</strong> is false; <strong><em>P</em>(7)</strong> is false.</li>
+</ul>
+</li>
+<li><p><em>P</em>(<em>x</em>,<em>y</em>) &#x3D; <em>x</em> is less than y</p>
+<p>  | Condensed truth table of <em>P</em>(<em>x</em>,<em>y</em>) | x &#x3D; 1                         | x &#x3D; 2                         | x &#x3D; 3                         |</p>
+</li>
+</ol>
+<p>| ————————————- | —————————– | —————————– | —————————– |<br>| <strong>y &#x3D; 1</strong>                             | <font color=blue><strong>F</strong></font> | <font color=blue><strong>F</strong></font> | <font color=blue><strong>F</strong></font> |<br>| <strong>y &#x3D; 2</strong>                             | <font color=red><strong>T</strong></font>  | <font color=blue><strong>F</strong></font> | <font color=blue><strong>F</strong></font> |<br>| <strong>y &#x3D; 3</strong>                             | <font color=red><strong>T</strong></font>  | <font color=red><strong>T</strong></font>  | <font color=blue><strong>F</strong></font> |</p>
+<h3 id="Quantifier"><a href="#Quantifier" class="headerlink" title="Quantifier"></a>Quantifier</h3><blockquote>
+<p><strong>量词 (Quantifiers):</strong> 用于表示在 domain 中以<em>P</em>(<em>x</em>)为 True 的数量.<br>Well-known domains: <strong>N</strong> (the domain of <em>positive integers</em>), <strong>Z</strong> (the domain of <em>integers</em>)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Quantifier</th>
+<th>Proposition</th>
+<th>什么时候为 <font color=red>True</font> (in the domain)</th>
+<th>什么时候为 <font color=blue>False</font> (in the domain)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>全称量词 (Universal quantifier)</strong></td>
+<td>∀x P(x)</td>
+<td><em>P</em>(<em>x</em>) is <font color=red><strong>True</strong></font> for <font color=red><strong>all</strong></font> values of <em>x</em></td>
+<td><em>P</em>(<em>x</em>) is <font color=blue><strong>False</strong></font> for <font color=blue><strong>one</strong></font> values of <em>x</em></td>
+</tr>
+<tr>
+<td><strong>存在量词 (Existential quantifier)</strong></td>
+<td>∃x P(x)</td>
+<td><em>P</em>(<em>x</em>) is <font color=red><strong>True</strong></font> for <font color=blue><strong>one</strong></font> values of <em>x</em></td>
+<td><em>P</em>(<em>x</em>) is <font color=blue><strong>False</strong></font> for <font color=red><strong>all</strong></font> values of <em>x</em></td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>Given the domain N, find the truth values of: <strong>∀x∈N (x&gt;1)</strong> and <strong>∀x∈N (x<sup>3</sup>&amp;ge;x)</strong></p>
+<table>
+<thead>
+<tr>
+<th>P(x)</th>
+<th>P(1)</th>
+<th>P(2)</th>
+<th>P(3)</th>
+<th>…</th>
+<th>Truth value of ∀x∈N P(x)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x&gt;1</td>
+<td><font color=blue><strong>F</strong></font></td>
+<td><font color=red><strong>T</strong></font></td>
+<td><font color=red><strong>T</strong></font></td>
+<td>…</td>
+<td><font color=blue><strong>F</strong></font></td>
+</tr>
+<tr>
+<td>x<sup>3</sup>&amp;ge;x</td>
+<td><font color=red><strong>T</strong></font></td>
+<td><font color=red><strong>T</strong></font></td>
+<td><font color=red><strong>T</strong></font></td>
+<td>…</td>
+<td><font color=red><strong>T</strong></font></td>
+</tr>
+</tbody></table>
+</li>
+<li><p>Given the domain N, find the truth values of: <strong>∃x∈N (x&gt;1)</strong> and <strong>∃x∈N (x<sup>3</sup>&lt;x)</strong></p>
+<table>
+<thead>
+<tr>
+<th>P(x)</th>
+<th>P(1)</th>
+<th>P(2)</th>
+<th>P(3)</th>
+<th>…</th>
+<th>Truth value of ∃x∈N P(x)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>x&gt;1</td>
+<td><font color=blue><strong>F</strong></font></td>
+<td><font color=red><strong>T</strong></font></td>
+<td><font color=red><strong>T</strong></font></td>
+<td>…</td>
+<td><font color=red><strong>T</strong></font></td>
+</tr>
+<tr>
+<td>x<sup>3</sup>&lt;x</td>
+<td><font color=blue><strong>F</strong></font></td>
+<td><font color=blue><strong>F</strong></font></td>
+<td><font color=blue><strong>F</strong></font></td>
+<td>…</td>
+<td><font color=blue><strong>F</strong></font></td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h3 id="De-Morgan’s-Laws-for-Quantifiers"><a href="#De-Morgan’s-Laws-for-Quantifiers" class="headerlink" title="De Morgan’s Laws for Quantifiers"></a>De Morgan’s Laws for Quantifiers</h3><p>量化表达式的否定，这种量词否定的规则称为 <strong>量词的德摩根律 (De Morgan’s Laws for Quantifiers):</strong></p>
+<ul>
+<li><p>∀x P(x) &#x3D; 班上 <font color=red><strong>每个</strong></font> 学生<strong>都</strong>学过微积分</p>
+<ul>
+<li><p>这一语句的否定是: &amp;not;∀x P(x) &#x3D;  “<strong>并非</strong> 班上 <font color=red><strong>每个</strong></font> 学生都学过微积分”</p>
+</li>
+<li><p>也就是 “班上 <font color=blue><strong>有个</strong></font> 学生 **没有 **学过微积分” &#x3D; ∃x &amp;not;P(x)<br>$$<br>\bf \neg \forall \textcolor{red}{(}x \textbf{P}(x)\textcolor{red}{)} \equiv \exists x\ \neg\textbf{P}(x)<br>$$</p>
+</li>
+</ul>
+</li>
+<li><p>∃x P(x) &#x3D; 班上 <font color=blue><strong>有个</strong></font> 学生学过微积分</p>
+<ul>
+<li><p>这一语句的否定是: &amp;not;∃x P(x) &#x3D;  “<strong>并非</strong> 班上 <font color=blue><strong>有个</strong></font> 学生学过微积分”</p>
+</li>
+<li><p>也就是 “班上 <font color=red><strong>每个</strong></font> 学生 <strong>都没</strong> 学过微积分” &#x3D; ∀x &amp;not;P(x)<br>$$<br>\bf \neg \exists \textcolor{red}{(}x \textbf{P}(x)\textcolor{red}{)} \equiv \forall x \neg\textbf{P(x)}<br>$$</p>
+</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>否定</th>
+<th>等价语句</th>
+<th>什么时候为 <font color=red>True</font> (in the domain)</th>
+<th>什么时候为 <font color=blue>False</font> (in the domain)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&amp;not;∀x P(x)</td>
+<td>∃x &amp;not;P(x)</td>
+<td><em>P</em>(<em>x</em>) is <font color=blue><strong>False</strong></font> for <font color=red><strong>all</strong></font> values of <em>x</em></td>
+<td>有 <em>x</em>, 使 <em>P</em>(<em>x</em>) 为 <font color=red><strong>True</strong></font></td>
+</tr>
+<tr>
+<td>&amp;not;∃x P(x)</td>
+<td>∀x &amp;not;P(x)</td>
+<td>有 <em>x</em>, 使 <em>P</em>(<em>x</em>) 为 <font color=blue><strong>False</strong></font></td>
+<td><em>P</em>(<em>x</em>) is <font color=red><strong>True</strong></font> for <font color=red><strong>all</strong></font> values of <em>x</em></td>
+</tr>
+</tbody></table>
+<h3 id="Nested-Quantifiers"><a href="#Nested-Quantifiers" class="headerlink" title="*Nested Quantifiers"></a>*Nested Quantifiers</h3><blockquote>
+<p><strong>将量化当作循环：</strong>当量词均为全称量词或均为存在量词时，可以交换量词顺序，否则交换则会改变表示的意思。如∀x ∃y P(x,y) 与 ∃y ∀x P(x,y) 意义不同，前者表示为对于任意的x都能够存在一个y满足P(x,y)，后者表示为存在一个y，其对任意的x都满足P(x,y)。</p>
+</blockquote>
+<p>为了了理解涉及 <strong>嵌套量词的语句</strong>，我们需要閘明其中出现的 <strong>量词和谓词 (Quantifiers and predicates)</strong> 的含义<br>$$<br>\begin{aligned}<br>\bf 将下列语句翻译成汉语句,\ 假定变量 x 和 y 的domain &amp;\bf&#x3D; 实数 (real\ number):\<br>\bf ∀x\ ∃y\ (x+y&#x3D;0) &amp;\bf &#x3D; 对所有实数x,\ 有一个实数y,\ 使得x十y&#x3D;0\<br>∀x\ ∀y\ ((x&gt;0)\and(y&lt;0) → (xy&lt;0)) &amp;\bf &#x3D; 对任意实数x和y,\ if\ x&gt;0\ and\ y&lt;0, then\ y&lt;0<br>\&amp;\bf &#x3D; 一个正实数与一个负实数的积一定是负实数<br>\end{aligned}<br>$$<br><strong>嵌套量词 (Nested Quantifiers):</strong> 一个量词出现在另一个量词的作用域内.</p>
+<p>​						<strong>∀x∈D ∀y∈D P(x,y)</strong> means <strong>∀x∈D <font color=red>(</font>∀y∈D P(x,y)<font color=red>)</font></strong>, assume the domain D &#x3D; {1,2,3}</p>
+<ul>
+<li><p>要判定 <strong>∀x ∀y P(x,y)</strong> 是否 &#x3D; True</p>
+<ol>
+<li><p>对 x 所有的值做循环：每一步，对 y 所有的值做循环。</p>
+</li>
+<li><p>如果对于某些 x 和 y，P(x,y) 为假，则 <strong>∀x ∀y P(x,y)</strong> 为假且外部和内部循环都 <strong>终止 (break)</strong></p>
+</li>
+<li><p>如果外循环在遍历每个 x 后结束，<strong>∀x ∀y P(x,y)</strong> 为真</p>
+</li>
+</ol>
+</li>
+<li><p>要判定 <strong>∀x ∃y P(x,y)</strong> 是否 &#x3D; True</p>
+<ol>
+<li><p>对 x 所有的值做循环：每一步，对 y 所有的值做循环。</p>
+</li>
+<li><p>当找到一对 x 和 y 使得 P(x,y) 为真，内循环结束。</p>
+</li>
+<li><p>如果没有找到 y 使 P(x,y) 为真，外循环 <strong>终止 (break)</strong> 因为 <strong>∀x ∃y P(x,y)</strong> 已经证明为假。</p>
+</li>
+<li><p>如果外循环在遍历每个 x 后结束，<strong>∀x ∃y P(x,y)</strong> 为真</p>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<p>Example: Let <em>P</em>(<em>x,y</em>) be the statement x*y&#x3D;y*x, the domain D &#x3D; {1,2,3},</p>
+<p><strong>∀x ∀y P(x,y)</strong> &#x3D; True: </p>
+<p><strong>∀x ∃y P(x,y)</strong> &#x3D; True:</p>
+<p><strong>∃x ∀y P(x,y)</strong> &#x3D; True:</p>
+<p><strong>∃x ∃y P(x,y)</strong> &#x3D; True:</p>
+<p><strong>∀y ∀x P(x,y)</strong> &#x3D; True: </p>
+<h2 id="2-3-Rules-of-inference"><a href="#2-3-Rules-of-inference" class="headerlink" title="2.3 Rules of inference"></a>2.3 Rules of inference</h2><blockquote>
+<ul>
+<li><strong>论证 (argument): <strong>指一连串的命题并以</strong>结论为最后的命题</strong></li>
+<li>**有效性 (valid): **The <strong>conclusion</strong> 必须是 <strong>用前提推导出来 (derived by premises)</strong> 的</li>
+<li><strong>推理规则 (Rules of inference):</strong> 从已有的语句中推导出新的语句</li>
+<li><strong>谬论 (fallacy):</strong> 常见的错误推理，它直接导致无效论证</li>
+</ul>
+<p><strong>推理规则 (Rules of inference)</strong> 是用于从一个或多个前提推导出结论的逻辑规则。以下是一些基本的推理规则。</p>
+</blockquote>
+<img src="../../../Desktop/Typora_Picture/IMG_7606.PNG" srcset="/img/loading.gif" lazyload alt="IMG_7606" style="zoom:48%;" />
+
+<img src="../../../Desktop/Typora_Picture/IMG_23B6701921E2-1.jpeg" srcset="/img/loading.gif" lazyload alt="IMG_23B6701921E2-1" style="zoom:40%;" />
+
+
+
+<h2 id="2-4-Proof-methods"><a href="#2-4-Proof-methods" class="headerlink" title="2.4 Proof methods"></a>2.4 Proof methods</h2><blockquote>
+<p><strong>定理 (theorem):</strong> 一个能够被证明是真的语句。不太重要的定理有时被称为命题、事实(fact)或结论(result)。用一个证明展示一个定理是真的。<br><strong>证明 (proof):</strong> 建立定理真实性的有效论证，证明中可以用到的语句包括公立（axiom）或假设（postulate)。<br><strong>引理 (lemma):</strong> 一个不太重要但有助于证明其他结论的定理。<br><strong>推论 (corollary):</strong> 是从一个已经被证明的定理可以直接建立起来的一个定理。<br><strong>猜想 (conjecture):</strong> 是一个被提出认为是真的命题，通常是基于部分证据、启发式论证或者专家的直觉。</p>
+</blockquote>
+<h3 id="Direct-Proofs-p-amp-rarr-q"><a href="#Direct-Proofs-p-amp-rarr-q" class="headerlink" title="Direct Proofs (p &amp;rarr; q)"></a>Direct Proofs (p &amp;rarr; q)</h3><p><strong>直接证明 (Direct Proofs):</strong> 假设 <strong>p</strong> 为 <strong>真&#x2F;前提(premise)</strong>, 使用推理规则&#x2F;公理&#x2F;逻辑等价来表明 <strong>q</strong> 也为真</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs py">Example: 证明两个奇数(a, b)的和是偶数<br>Proof: 因为 a, b 是奇数，所以存在整数 x, y 满足 a=2x+<span class="hljs-number">1</span> 和 b=2y+<span class="hljs-number">1</span><br>a+b = 2x+<span class="hljs-number">1</span> + 2y+<span class="hljs-number">1</span> <br>		= <span class="hljs-number">2</span> (x+y+<span class="hljs-number">1</span>)<br>Thus, their <span class="hljs-built_in">sum</span> <span class="hljs-keyword">is</span> even<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="Contraposition-x2F-contradiction"><a href="#Contraposition-x2F-contradiction" class="headerlink" title="Contraposition &#x2F; contradiction"></a>Contraposition &#x2F; contradiction</h3><p><strong>反证法 (Proof by contraposition):</strong> 假设 <strong>&amp;not;q</strong> 为 <strong>真&#x2F;前提(premise)</strong>, 使用推理规则&#x2F;公理&#x2F;逻辑等价来表明 <strong>&amp;not;p</strong> 也为真 <strong>(&amp;not;q &amp;rarr; &amp;not;p &amp;equiv; p &amp;rarr; q)</strong></p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs py">Example: 设n为整数. 证明: 如果 5n+<span class="hljs-number">4</span> 是奇数, 那么n是奇数<br>Proof: 因此, 存在一个整数a, 使得n=2a<br>5n+<span class="hljs-number">4</span> = 10a+<span class="hljs-number">4</span><br>		 = <span class="hljs-number">2</span>(5a+<span class="hljs-number">2</span>), which <span class="hljs-keyword">is</span> an even integer<br></code></pre></td></tr></table></figure>
+
+
+
+<p>Take ¬<em>p</em> as the premise, then show that there is <strong>contradiction</strong></p>
+<h3 id="Proof-by-cases-x2F-exhaustion"><a href="#Proof-by-cases-x2F-exhaustion" class="headerlink" title="Proof by cases &#x2F; exhaustion"></a>Proof by cases &#x2F; exhaustion</h3><p>涵盖所有可能的情况，证明该 statement is true in each case</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs py">Example: Let a,b,c be <span class="hljs-built_in">any</span> integers. If both a+b <span class="hljs-keyword">and</span> b+c are even, then a+c <span class="hljs-keyword">is</span> even.<br>Proof:<br>    Case <span class="hljs-number">1</span>: b <span class="hljs-keyword">is</span> odd<br>        As a+b <span class="hljs-keyword">is</span> even <span class="hljs-keyword">and</span> b <span class="hljs-keyword">is</span> odd, a <span class="hljs-keyword">is</span> odd.<br>        As b+c <span class="hljs-keyword">is</span> even <span class="hljs-keyword">and</span> b <span class="hljs-keyword">is</span> odd, c <span class="hljs-keyword">is</span> odd.<br>        Thus, a+c <span class="hljs-keyword">is</span> even.<br>    Case <span class="hljs-number">2</span>: b <span class="hljs-keyword">is</span> even<br>        As a+b <span class="hljs-keyword">is</span> even <span class="hljs-keyword">and</span> b <span class="hljs-keyword">is</span> even, a <span class="hljs-keyword">is</span> even.<br>        As b+c <span class="hljs-keyword">is</span> even <span class="hljs-keyword">and</span> b <span class="hljs-keyword">is</span> even, c <span class="hljs-keyword">is</span> even.<br>        Thus, a+c <span class="hljs-keyword">is</span> even.<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="Existence-proofs"><a href="#Existence-proofs" class="headerlink" title="Existence proofs"></a>Existence proofs</h3><p>通过提供一个真实的例子来证明命题</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs py">Examples:<br><span class="hljs-number">1.</span> For some real numbers x, y prove x^<span class="hljs-number">2</span> &gt; y^<span class="hljs-number">2</span> <span class="hljs-keyword">if</span> x &gt; y<br>Equation <span class="hljs-keyword">is</span> true <span class="hljs-keyword">for</span> x = <span class="hljs-number">2</span> <span class="hljs-keyword">and</span> y = -<span class="hljs-number">1.</span><br>Therefore, the proposition <span class="hljs-keyword">is</span> <span class="hljs-literal">True</span> <span class="hljs-keyword">for</span> some real numbers.<br><br><span class="hljs-number">2.</span> For some real number a, prove that (a+<span class="hljs-number">1</span>)^<span class="hljs-number">2</span> &gt;= a^<span class="hljs-number">2</span><br>Equation <span class="hljs-keyword">is</span> true <span class="hljs-keyword">for</span> a = <span class="hljs-number">3.</span><br>Therefore, the proposition <span class="hljs-keyword">is</span> <span class="hljs-literal">True</span> <span class="hljs-keyword">for</span> some real numbers.<br></code></pre></td></tr></table></figure>
+
+<p>Existence proofs (constructive)</p>
+<p>Existence proofs (non-constructive)</p>
+<h3 id="Disprove-by-counter-example"><a href="#Disprove-by-counter-example" class="headerlink" title="Disprove by counter example"></a>Disprove by counter example</h3><p>通过提供一个错误的例子来证明命题</p>
+<figure class="highlight mercury"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs mercury">Examples:<br><span class="hljs-number">1</span>. For <span class="hljs-built_in">all</span> real numbers x, y prove x^<span class="hljs-number">2</span> &gt; y^<span class="hljs-number">2</span> <span class="hljs-built_in">if</span> x &gt; y<br>Equation <span class="hljs-keyword">is</span> <span class="hljs-built_in">false</span> for x <span class="hljs-built_in">=</span> <span class="hljs-number">0</span> and y <span class="hljs-built_in">=</span> -<span class="hljs-number">1</span>.<br>Therefore, the proposition <span class="hljs-keyword">is</span> <span class="hljs-built_in">not</span> True for <span class="hljs-built_in">all</span> real numbers.<br><br><span class="hljs-number">2</span>. For <span class="hljs-built_in">all</span> real number a, prove that (a+<span class="hljs-number">1</span>)^<span class="hljs-number">2</span> &gt;<span class="hljs-built_in">=</span> a^<span class="hljs-number">2</span><br>Equation <span class="hljs-keyword">is</span> <span class="hljs-built_in">false</span> for a <span class="hljs-built_in">=</span> -<span class="hljs-number">1</span>.<br>Therefore, the proposition <span class="hljs-keyword">is</span> <span class="hljs-built_in">not</span> True for <span class="hljs-built_in">all</span> real numbers.<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="Proof-by-Induction"><a href="#Proof-by-Induction" class="headerlink" title="Proof by Induction"></a>Proof by Induction</h3><p><strong>归纳法 (Proof by Induction):</strong> 是一个用来证明一系列命题（通常是对所有自然数都成立的命题）都是真的。</p>
+<p>归纳法的证明通常包含两个步骤：基础步骤（base case）和归纳步骤（inductive step）。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs py">Prove that ∀x∈D P(x) <span class="hljs-keyword">is</span> true<br>Induction:<br>Prove the base <span class="hljs-keyword">case</span>, e.g., P(<span class="hljs-number">1</span>)<br>Show that, <span class="hljs-keyword">if</span> P(k) <span class="hljs-keyword">is</span> true, then P(k+<span class="hljs-number">1</span>) <span class="hljs-keyword">is</span> also true<br></code></pre></td></tr></table></figure>
+
+
+
+<h1 id="03-Basic-Structures"><a href="#03-Basic-Structures" class="headerlink" title="03. Basic Structures"></a><u>03. Basic Structures</u></h1><h2 id="3-1-Sets"><a href="#3-1-Sets" class="headerlink" title="3.1 Sets"></a>3.1 Sets</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs py">&#123;&#125;：<span class="hljs-type">Set</span><br>∈：In<br>∉：Not In<br>∅：Empty <span class="hljs-type">Set</span><br>U：<span class="hljs-type">Union</span>						<span class="hljs-comment"># S U T, 在S或T中的元素集合</span><br>∩：Intersection		<span class="hljs-comment"># S ∩ T, 既属于 S 又属于 T 的元素集合</span><br>-：Difference			<span class="hljs-comment"># S – T, 在 S 中但不在 T 中的元素集合</span><br>⊆：Subset 					<span class="hljs-comment"># S ⊆ T, S中的每个元素都在T中</span><br>⊂：Proper Subset 	<span class="hljs-comment"># 如果 S ⊆ T 并且 S ≠ T, 我们可以说S是T的真子集即 S ⊂ T</span><br>⊇：Superset				<span class="hljs-comment"># S ⊇ T, T中的每个元素都在S中</span><br>⊃：Proper Superset <span class="hljs-comment"># 如果 S ⊇ T 并且 S ≠ T, 我们可以说S是T的真超集即 S ⊃ T</span><br>=：<span class="hljs-type">Set</span> equality		<span class="hljs-comment"># S = T, 集合S和集合T包含的元素完全一样</span><br>≠：Not Equal				<span class="hljs-comment"># S ≠ T 表示集合S和集合T不完全相同</span><br>P(A)：Power <span class="hljs-type">Set</span>		<span class="hljs-comment"># 幂集: S 的 Power Set 包括 S 的所有子集 (包括空集和S本身)</span><br>x：Cartesian Product <span class="hljs-comment"># 两个集合S和T的笛卡尔积是一个集合, 其中每个元素都是由一个来自S的元素和一个来自T的元素组成的有序对</span><br>|S|: Cardinality 	 <span class="hljs-comment"># 集合 S 中元素的个数</span><br></code></pre></td></tr></table></figure>
+
+<p>The <strong>set-builder</strong> notation: define a set by using predicate(s)</p>
+<ul>
+<li>S &#x3D; { x | x ∈ <strong>Domain</strong> and <strong>Predicate(x)</strong> }</li>
+<li>S &#x3D; { x ∈ <strong>Domain</strong> | <strong>Predicate(x)</strong> }</li>
+</ul>
+<img src="../../../Desktop/Typora_Picture/Screenshot%202023-09-10%20at%2023.57.20.png" srcset="/img/loading.gif" lazyload alt="Screenshot 2023-09-10 at 23.57.20" style="zoom:30%;" />
+
+<p>Let’s express the following notations by using logic expressions:</p>
+<img src="../../../Desktop/Typora_Picture/Screenshot%202023-09-11%20at%2000.56.56.png" srcset="/img/loading.gif" lazyload alt="express the following notations by using logic expressions" style="zoom:35%;" />
+
+
+
+<h2 id="3-2-Sequences"><a href="#3-2-Sequences" class="headerlink" title="3.2 Sequences"></a>3.2 Sequences</h2><p><strong>序列 (Sequences)</strong> 是元素的 <strong>有序列表(ordered collection)</strong> —— 我们将使用符号 “()” 代表 Sequences, 我们的下标从1开始</p>
+<ul>
+<li>eg. Numeric sequence: (1, 2, 4, 8, 16); Character sequence: (‘a’, ‘b’, ‘c’).</li>
+</ul>
+<img src="../../../Desktop/Typora_Picture/Screenshot%202023-09-14%20at%2017.30.49.png" srcset="/img/loading.gif" lazyload alt="Screenshot 2023-09-14 at 17.30.49" style="zoom:30%;" />
+
+<h3 id="Sequence-properties"><a href="#Sequence-properties" class="headerlink" title="Sequence properties"></a>Sequence properties</h3><p><img src="/../../../Desktop/Typora_Picture/Screenshot%202023-09-14%20at%2017.35.21.png" srcset="/img/loading.gif" lazyload alt="Screenshot 2023-09-14 at 17.35.21"></p>
+<h3 id="递推关系-Recurrence"><a href="#递推关系-Recurrence" class="headerlink" title="递推关系 (Recurrence)"></a>递推关系 (Recurrence)</h3><p>我们可以用 <strong>递归式(recurrence)</strong> 定义一个序列，它可以有无限个元素</p>
+<p><img src="/../../../Desktop/Typora_Picture/Screenshot%202023-09-14%20at%2017.52.06.png" srcset="/img/loading.gif" lazyload alt="Screenshot 2023-09-14 at 17.52.06"></p>
+<p><em>Example</em>: <strong><font color=grey> 斐波那契数列 (Fibonacci sequence)</font></strong> <strong>f</strong> 被定义为: <strong>f<sub>0</sub>, f<sub>1</sub>, f<sub>2</sub>…</strong></p>
+<ul>
+<li>初始条件：<strong>f<sub>0</sub> &#x3D; 0, f<sub>1</sub> &#x3D; 1</strong></li>
+<li>递推关系：<strong>f<sub>i</sub> &#x3D; f<sub>i-1</sub> + f<sub>i-2</sub></strong>, 如果 i≥3</li>
+</ul>
+<p>找出斐波那契数 f<sub>2</sub>, f<sub>3</sub>, f<sub>4</sub>, f<sub>5</sub>…</p>
+<img src="../../../Desktop/Typora_Picture/Screenshot%202023-09-14%20at%2018.03.28.png" srcset="/img/loading.gif" lazyload alt="Screenshot 2023-09-14 at 18.03.28" style="zoom:40%;" />
+
+<h3 id="Summation-of-sequence"><a href="#Summation-of-sequence" class="headerlink" title="Summation of sequence"></a>Summation of sequence</h3><p><strong>求和符号(The summation notation)</strong> 用于表示 <strong>一个序列</strong> 中各项(terms)的和（l是下限，h是上限）：</p>
+<img src="../../../Desktop/Typora_Picture/Screenshot%202023-09-14%20at%2018.09.15.png" srcset="/img/loading.gif" lazyload alt="Screenshot 2023-09-14 at 18.09.15" style="zoom:35%;" />
+
+<img src="../../../Desktop/Typora_Picture/Screenshot%202023-09-14%20at%2018.18.24.png" srcset="/img/loading.gif" lazyload alt="Screenshot 2023-09-14 at 18.18.24" style="zoom:30%;" />
+
+<img src="../../../Desktop/Typora_Picture/Screenshot%202023-09-14%20at%2018.18.44.png" srcset="/img/loading.gif" lazyload alt="Screenshot 2023-09-14 at 18.18.44" style="zoom:30%;" />
+
+
+
+<h3 id="Nested-summation"><a href="#Nested-summation" class="headerlink" title="Nested summation"></a>Nested summation</h3><img src="../../../Desktop/Typora_Picture/Screenshot%202023-09-14%20at%2018.23.03.png" srcset="/img/loading.gif" lazyload alt="Screenshot 2023-09-14 at 18.23.03" style="zoom:30%;" />
+
+
+
+<h2 id="3-3-Matrices"><a href="#3-3-Matrices" class="headerlink" title="3.3 Matrices"></a>3.3 Matrices</h2><p><strong>矩阵(Matrices)</strong> 是一个有m行n列的 <strong>矩形数组(rectangular array)</strong> 我们也叫它 <strong>m×n matrix</strong><br>$$<br>\bf m \times n\ 代表的是一个 m 行,\ n列的矩阵 \<br>\bf A&#x3D;[{a}_{ij}]\ 代表的是矩阵中第i行第j列的元素<br>$$</p>
+<h4 id="Matrix-addition"><a href="#Matrix-addition" class="headerlink" title="Matrix addition"></a>Matrix addition</h4><h1 id="A-B-x3D-a-ij-b-ij-Example-begin-vmatrix-1-amp-2-amp-3-4-amp-5-amp-6-end-vmatrix-begin-vmatrix-1-amp-2-amp-3-4-amp-5-amp-6-end-vmatrix"><a href="#A-B-x3D-a-ij-b-ij-Example-begin-vmatrix-1-amp-2-amp-3-4-amp-5-amp-6-end-vmatrix-begin-vmatrix-1-amp-2-amp-3-4-amp-5-amp-6-end-vmatrix" class="headerlink" title="$$A + B &#x3D; [{a}{ij}+{b}{ij}]\Example:\begin{vmatrix}1&amp;2&amp;3 \4&amp;5&amp;6\end{vmatrix}+\begin{vmatrix}1&amp;2&amp;3 \4&amp;5&amp;6\end{vmatrix}"></a>$$<br>A + B &#x3D; [{a}<em>{ij}+{b}</em>{ij}]\<br>Example:<br>\begin{vmatrix}<br>1&amp;2&amp;3 \<br>4&amp;5&amp;6<br>\end{vmatrix}<br>+<br>\begin{vmatrix}<br>1&amp;2&amp;3 \<br>4&amp;5&amp;6<br>\end{vmatrix}</h1><p>\begin{vmatrix}<br>2&amp;4&amp;6 \<br>8&amp;10&amp;12<br>\end{vmatrix}<br>$$</p>
+<h4 id="Matrix-multiplication"><a href="#Matrix-multiplication" class="headerlink" title="Matrix multiplication"></a>Matrix multiplication</h4><img src="../../../Desktop/Typora_Picture/Screenshot%202023-09-14%20at%2018.35.22.png" srcset="/img/loading.gif" lazyload alt="Screenshot 2023-09-14 at 18.35.22" style="zoom:40%;" />
+$$
+Example:
+\begin{vmatrix}
+1&0&4\\
+2&1&1\\
+3&1&0\\
+0&2&2
+\end{vmatrix}
+\begin{vmatrix}
+2&4\\
+1&1\\
+3&0\\
+\end{vmatrix}
+=
+\begin{vmatrix}
+1*2+0*1+4*3 & 1*4+0*1+4*0 \\
+2*2+1*1+1*3 & 2*4+1*1+1*0 \\
+3*2+1*1+0*3 & 3*4+1*1+0*0 \\
+0*2+2*1+2*3 & 0*4+2*1+2*0 \\
+\end{vmatrix}
+=
+\begin{vmatrix}
+14&4\\
+8&9\\
+7&13\\
+8&2
+\end{vmatrix}
+$$
+
+
+
+<h2 id="3-4-Functions"><a href="#3-4-Functions" class="headerlink" title="3.4 Functions"></a>3.4 Functions</h2><blockquote>
+<p><strong>函数(Functions)</strong> 有时也称为 <strong>映射( mapping)</strong> 或者 <strong>变换(transformation)</strong>.</p>
+</blockquote>
+<p><strong>函数(Functions)</strong> 就是一个集合到另一个集合的一种转换关系（但是一定要 <strong>X 中的元素仅能对应到 Y 中的一个元素</strong>）。<br>$$<br>\bf f:X \rightarrow Y\ (X 是 f 的domain;\ Y 是 f 的range)\<br>\bf f(x)&#x3D;y\ (x 是 y 的原像&#x3D;preimage,\ x 是 y 的像&#x3D;image)<br>$$</p>
+<img src="../../../Desktop/Typora_Picture/Screenshot%202023-09-14%20at%2017.10.28.png" srcset="/img/loading.gif" lazyload alt="Screenshot 2023-09-14 at 17.10.28" style="zoom:33%;" />
+
+
+
+<h3 id="One-to-one-amp-Onto-function"><a href="#One-to-one-amp-Onto-function" class="headerlink" title="One-to-one &amp; Onto function"></a>One-to-one &amp; Onto function</h3><ol>
+<li><em><strong>f: X* &amp;rightarrow; *Y</strong></em> &#x3D; <strong>one-to-one</strong> function, 当且仅当 <strong>f(x) &#x3D; f(x’) &amp;harr; x &#x3D; x’</strong></li>
+<li><em><strong>f: X* &amp;rightarrow; *Y</strong></em> &#x3D; <strong>onto</strong> function, 当且仅当对于每个元素 <em><strong>y*&amp;in;*Y</strong></em>, 存在一个元素 <em><strong>x*&amp;in;*X</strong></em> 使得 <em><strong>f* (<em>x</em>) &#x3D; *y</strong></em></li>
+</ol>
+<p><img src="/../../../Desktop/Typora_Picture/IMG_7845.PNG" srcset="/img/loading.gif" lazyload alt="IMG_7845"></p>
+<h2 id="3-5-Relations"><a href="#3-5-Relations" class="headerlink" title="3.5 Relations"></a>3.5 Relations</h2><p>A <strong>relation</strong> <em>R</em> is a set of <em>n</em>-tuples, each tuple is a sequence of <em>n</em> elements</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Discrete-Mathematics/" class="category-chain-item">Discrete Mathematics</a>
+  
+  
+
+      </span>
+    
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Notes/" class="category-chain-item">Notes</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Discrete-Mathematics/" class="print-no-link">#Discrete Mathematics</a>
+      
+        <a href="/tags/Notes/" class="print-no-link">#Notes</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>COMP2012 Discrete Mathematics</div>
+      <div>http://example.com/2022/08/16/DiscretMath/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>Rocky CHEN</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>August 16, 2022</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/11/25/essay1/" title="中国革命背景下的女权主义发展及对中国妇女的影响">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">中国革命背景下的女权主义发展及对中国妇女的影响</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/08/16/vim/" title="Vim">
+                        <span class="hidden-mobile">Vim</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script>
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          Fluid.utils.createCssLink('https://lib.baomitu.com/disqusjs/1.3.0/disqusjs.css');
+          Fluid.utils.createScript('https://lib.baomitu.com/disqusjs/1.3.0/disqus.js', function() {
+            new DisqusJS({
+              shortname: 'fluid',
+              apikey: ''
+            });
+          });
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  <!-- 鼠标特效 -->
+  <script type="text/javascript" src="/js/click.js"></script>
+  
+    <div class="footer-content">
+       <a href="https://ziyangchen.com/" target="_blank" rel="nofollow noopener"><span>Copyright © 2020-2023</span></a> <i class="iconfont icon-love"></i> <a href="https://ziyangchen.com/" target="_blank" rel="nofollow noopener"><span>Rocky CHEN</span></a> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":true,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
